@@ -258,8 +258,8 @@
 
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Label column is smaller */
-    gap: 5px 15px; /* Space between rows and columns */
+    grid-template-columns: 1fr 2fr;
+    gap: 5px 15px;
     align-items: start;
     margin-bottom: 20px;
     max-width: 600px;
@@ -268,7 +268,6 @@
     text-align: left;
   }
 
-  /* Left column (labels) */
 .details-labels p {
     font-weight: bold;
     margin: 5px 0;
