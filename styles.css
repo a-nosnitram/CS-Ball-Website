@@ -1,0 +1,275 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ body,
+ html {
+     height: 100%;
+     background: linear-gradient(180deg, #0d0d1a, #000);
+     overflow-x: hidden;
+ }
+
+ .header {
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     color: #fff;
+     position: relative;
+ }
+
+ .header h1 {
+     font-size: 4em;
+     letter-spacing: 2px;
+     animation: glow 3s infinite alternate;
+ }
+
+ .header h2 {
+     font-size: 1.2em;
+     margin-top: 10px;
+     opacity: 0.8;
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     white-space: nowrap;
+ }
+
+ .header p {
+     font-size: 0.7em;
+     margin-top: 5px;
+     margin-left: 100px;
+     margin-right: 100px;
+     opacity: 0.8;
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+
+ }
+
+ @keyframes glow {
+     from {
+         text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+     }
+
+     to {
+         text-shadow: 0 0 20px #1e90ff, 0 0 40px #1e90ff;
+     }
+ }
+
+ .btn {
+     margin-top: 30px;
+     padding: 15px 30px;
+     background-color: transparent;
+     color: #fff;
+     border: 2px solid #00bfff;
+     font-size: 1em;
+     cursor: pointer;
+     transition: all 0.4s ease;
+     border-radius: 30px;
+ }
+
+ .btn:hover {
+     background-color: #00bfff;
+     color: #000;
+     box-shadow: 0 0 20px #00bfff;
+ }
+
+ #reveal-button {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 0.8s ease, transform 0.8s ease;
+     pointer-events: none;
+ }
+
+ #reveal-button.show {
+     opacity: 1;
+     transform: translateY(0);
+     pointer-events: auto;
+ }
+
+ .particles,
+ .fish-container {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     overflow: hidden;
+     pointer-events: none;
+ }
+
+ .particle {
+     position: absolute;
+     font-size: 1.2em;
+     color: #2c5563;
+     opacity: 0.8;
+     animation: floatUp linear infinite;
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     white-space: nowrap;
+ }
+
+ @keyframes floatUp {
+     from {
+         transform: translateY(100vh);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(-10vh);
+         opacity: 1;
+     }
+ }
+
+ .fish {
+     position: absolute;
+     font-size: 1.5em;
+     color: #1e8fff97;
+     white-space: nowrap;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     white-space: nowrap;
+ }
+
+ @keyframes swimRight {
+     from {
+         left: -200px;
+     }
+
+     to {
+         left: 110%;
+     }
+ }
+
+ @keyframes swimLeft {
+     from {
+         left: 110%;
+         transform: scaleX(-1);
+     }
+
+     to {
+         left: -200px;
+         transform: scaleX(-1);
+     }
+ }
+
+ section {
+     padding: 100px 50px;
+     background-color: transparent;
+     color: #fff;
+     text-align: center;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ .fish-container,
+ .particles {
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     pointer-events: none;
+     overflow: hidden;
+ }
+
+ .header,
+ section,
+ .btn,
+ .rsvp-content {
+     position: relative;
+     z-index: 2;
+ }
+
+ section {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 1s ease-out, transform 1s ease-out;
+ }
+
+ section.visible {
+     opacity: 1;
+     transform: translateY(0);
+
+ }
+
+ #typed-text {
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     font-size: clamp(0.5rem, 2vw, 0.9rem);
+     color: #ffffff;
+     white-space: pre-wrap;
+     word-wrap: break-word;
+ }
+
+ #cursor {
+     display: inline-block;
+     width: 8px;
+     height: 0.9em;
+     background-color: #ffffffb3;
+     margin-left: 2px;
+     animation: blinkCursor 0.8s steps(2) infinite;
+     vertical-align: bottom;
+ }
+
+ @keyframes blinkCursor {
+     0% {
+         opacity: 1;
+     }
+
+     50% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
+
+ section p {
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     margin-top: 5px;
+     margin-bottom: 5px
+ }
+
+ section a {
+     color: #ffffff;
+     text-decoration: none;
+     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+
+ }
+
+ section h2 {
+    margin-bottom: 10px;
+ }
+
+ section a:hover {
+     color: #00bfff;
+     text-decoration: underline;
+ }
+
+#smaller-text{
+    font-size: x-small;
+    color:#ffffff91
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Label column is smaller */
+    gap: 5px 15px; /* Space between rows and columns */
+    align-items: start;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  /* Left column (labels) */
+.details-labels p {
+    font-weight: bold;
+    margin: 5px 0;
+  }

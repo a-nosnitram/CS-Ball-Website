@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <title>Computer Science Ball 2025</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Computer Science Ball 2025</h1>
+        <h2>Shell We Dance Under the C ?</h2>
+        <p id="typewriter"><span id="typed-text"></span><span id="cursor"></span></p>
+
+        <a href="#details"><button class="btn" id="reveal-button">Of course I'm interested, why are you even
+                asking?</button></a>
+
+        <div class="particles"></div>
+
+        <div class="fish-container"></div>
+    </div>
+
+    <!-- Details Section -->
+    <section id="details">
+
+        <h2>Event Details</h2>
+        <div class="details-grid">
+            <div class="details-labels">
+                <p>Date:</p>
+                <p>Venue:</p>
+                <p>Dress Code:</p>
+                <p>Theme:</p>
+            </div>
+
+            <div class="details-info">
+                <p>April 5, 2025</p>
+                <p>
+                    <a href="https://maps.app.goo.gl/oD7j5ysKH1FGK37L9" target="_blank" rel="noopener noreferrer">
+                        Upper and Lower College Hall
+                    </a>
+                </p>
+                <p>Do your best</p>
+                <p>Under the C
+                <span id="smaller-text">(In case you didn't C the big ass pun I put up there)</span> </p>
+            </div>
+        </div>
+
+
+        <a href="#rsvp"><button class="btn">RSVP Now</button></a>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp">
+
+        <h2>Reserve Your Spot</h2>
+        <p>Fill out the form to confirm your attendance.</p>
+        <button class="btn">Coming Soon</button>
+    </section>
+
+    <script>
+        // generating floating binary particles
+        const particlesContainer = document.querySelector('.particles');
+        const numParticles = 50;
+
+        for (let i = 0; i < numParticles; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.textContent = Math.random() < 0.5 ? '0' : '1';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            particle.style.opacity = Math.random();
+            particlesContainer.appendChild(particle);
+        }
+
+        // fish fish fish
+        const fishContainer = document.querySelector('.fish-container');
+        const numFish = 10;
+
+        for (let i = 0; i < numFish; i++) {
+            let fish = document.createElement('div');
+            fish.classList.add('fish');
+            fish.textContent = ' }<))))*> ';
+            fish.style.top = `${Math.random() * 90}%`;
+            fish.style.animationDuration = `${Math.random() * 10 + 8}s`;
+
+            const fishSize = Math.random() * 0.7 + 0.5; // range : 0.5em - 1.2em
+            fish.style.fontSize = `${fishSize}em`;
+
+            if (fishSize < 0.8) {
+                fish.style.color = '#1e8fff97'; // darker colour for smaller fish
+            } else {
+                fish.style.color = '#1e90ff'; // brighter colour for larger fish
+            }
+
+            // swimming directions
+            if (i % 2 === 0) {
+                fish.style.animationName = 'swimRight';
+            } else {
+                fish.style.animationName = 'swimLeft';
+            }
+
+            fishContainer.appendChild(fish);
+        }
+
+        // smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();  // Prevents default jump
+                const target = document.querySelector(this.getAttribute('href'));
+
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // TYPING OUT THE TEXT
+
+        const text = "Get ready to make waves at the most unforgettable night of the year! Join us for an evening of elegance, laughter, and dancing under the stars. With dazzling sea-inspired decor, delightful surprises, and music to keep you grooving, this is one tide you won't want to miss. Don't be shellfish—bring your friends (we love some good ol' pier pressure)!";
+
+        let i = 0;
+        const typingSpeed = 40; // in ms
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typed-text").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                // show the button after typing is complete
+                document.getElementById("reveal-button").classList.add("show");
+            }
+        }
+
+        // start typing after page has loaded
+        window.onload = typeWriter;
+
+    </script>
+
+</body>
+
+</html>
