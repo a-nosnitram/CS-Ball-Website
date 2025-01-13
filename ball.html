@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="header">
+    <div id="top" class="header">
         <h1>Computer Science Ball 2025</h1>
         <h2>Shell We Dance Under the C ?</h2>
         <p id="typewriter"><span id="typed-text"></span><span id="cursor"></span></p>
@@ -57,16 +57,22 @@
     <!-- RSVP Section -->
     <section id="rsvp">
         <h2>Reserve Your Spot</h2>
-        <p>Fill out the form to confirm your attendance.</p>
-        <button class="btn">Coming Soon</button>
+        <p>Buy your ticket for only 70£.</p>
+        <!-- price to be adjusted -->
+        <a href="https://www.yourunion.net/"> <button class="btn">Buy ticket</button></a>
+        <!-- link to the union website to be updated once tickets can be sold -->
+        <a href="#timer"><button class="btn"> How long shell I wait? </button></a>
     </section>
 
-        <!-- Countdown Timer -->
+    <!-- timer section -->
+    <section id="timer">
         <div id="countdown-container">
             <p id="countdown"></p>
             <p id="fun">...until a boat load of fun...</p>
             <p id="fun">^(;,;)^</p>
+            <a href="#top"><button class="btn"> Back to the top </button></a>
         </div>
+    </section>
 
     <script>
         // generating floating binary particles
