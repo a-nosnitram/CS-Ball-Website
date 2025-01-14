@@ -24,8 +24,8 @@
  }
 
  .header h1 {
-     font-size: 4em;
-     letter-spacing: 2px;
+    font-size: clamp(3em, 3vw, 2.5em);
+    letter-spacing: 2px;
      animation: glow 3s infinite alternate;
  }
 
@@ -38,13 +38,13 @@
  }
 
  .header p {
-     font-size: 0.7em;
+     font-size: clamp(1em, 2vw, 1.5em);
      margin-top: 5px;
-     margin-left: 100px;
-     margin-right: 100px;
+     margin-left: clamp(1rem, 4vw, 2rem);
+     margin-right: clamp(1rem, 4vw, 2rem);
+     ;
      opacity: 0.8;
      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
-
  }
 
  @keyframes glow {
@@ -59,7 +59,8 @@
 
  .btn {
      margin-top: 30px;
-     padding: 15px 30px;
+     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px); /* Dynamic padding */
+     /* Dynamic padding */
      background-color: transparent;
      color: #fff;
      border: 2px solid #00bfff;
@@ -67,11 +68,18 @@
      cursor: pointer;
      transition: all 0.4s ease;
      border-radius: 30px;
-     font-size: clamp(0.5rem, 2vw, 0.9rem);
+     font-size: clamp(0.9em, 1.5vw, 1.2em);
+     width: clamp(50%, 70%, 300p x);
 
  }
 
  .btn:hover {
+     background-color: #00bfff;
+     color: #000;
+     box-shadow: 0 0 20px #00bfff;
+ }
+
+ .btn:active {
      background-color: #00bfff;
      color: #000;
      box-shadow: 0 0 20px #00bfff;
@@ -158,10 +166,15 @@
 
  section {
      height: 100%;
-     padding: 20% 20%;
+     margin-top: 30%;
+     padding-top: clamp(20%, 25vh, 30%);
+     padding-bottom: clamp(20%, 25vw, 30%);
      background-color: transparent;
      color: #fff;
      text-align: center;
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 1s ease-out, transform 1s ease-out;
  }
 
  html {
@@ -188,11 +201,6 @@
      z-index: 2;
  }
 
- section {
-     opacity: 0;
-     transform: translateY(20px);
-     transition: opacity 1s ease-out, transform 1s ease-out;
- }
 
  section.visible {
      opacity: 1;
@@ -202,7 +210,6 @@
 
  #typed-text {
      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
-     font-size: clamp(0.5rem, 2vw, 0.9rem);
      color: #ffffff;
      white-space: pre-wrap;
      word-wrap: break-word;
@@ -275,6 +282,11 @@
      font-weight: bold;
      margin: 5px 0;
  }
+
+ #details {
+    font-size: clamp(0.9em, 2vw, 1.5em);
+    margin: 20px 20px;
+}
 
  #countdown-container {
      text-align: center;
