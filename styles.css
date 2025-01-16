@@ -24,9 +24,11 @@
  }
 
  .header h1 {
-    font-size: clamp(3em, 3vw, 2.5em);
-    letter-spacing: 2px;
+     font-size: clamp(3em, 3vw, 2.5em);
+     letter-spacing: 1px;
      animation: glow 3s infinite alternate;
+     font-family: OCR A Std, monospace;
+
  }
 
  .header h2 {
@@ -38,7 +40,7 @@
  }
 
  .header p {
-     font-size: clamp(1em, 2vw, 1.5em);
+     font-size: clamp(0.8em, 2vw, 1em);
      margin-top: 5px;
      margin-left: clamp(1rem, 4vw, 2rem);
      margin-right: clamp(1rem, 4vw, 2rem);
@@ -59,7 +61,8 @@
 
  .btn {
      margin-top: 30px;
-     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px); /* Dynamic padding */
+     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+     /* Dynamic padding */
      /* Dynamic padding */
      background-color: transparent;
      color: #fff;
@@ -254,6 +257,8 @@
 
  section h2 {
      margin-bottom: 10px;
+     font-family: OCR A Std, monospace;
+
  }
 
  section a:hover {
@@ -284,9 +289,9 @@
  }
 
  #details {
-    font-size: clamp(0.9em, 2vw, 1.5em);
-    margin: 20px 20px;
-}
+     font-size: clamp(0.9em, 2vw, 1.5em);
+     margin: 20px 20px;
+ }
 
  #countdown-container {
      text-align: center;
@@ -294,7 +299,7 @@
  }
 
  #countdown {
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     font-family: OCR A Std, monospace;
      font-weight: bold;
      font-size: 1.8em;
      color: #00bfff;
