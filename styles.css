@@ -62,8 +62,6 @@
  .btn {
      margin-top: 30px;
      padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
-     /* Dynamic padding */
-     /* Dynamic padding */
      background-color: transparent;
      color: #fff;
      border: 2px solid #00bfff;
@@ -289,7 +287,7 @@
  }
 
  #details {
-     font-size: clamp(0.9em, 2vw, 1.5em);
+     font-size: clamp(0.8em, 2vw, 1em);
      margin: 20px 20px;
  }
 
