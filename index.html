@@ -165,8 +165,7 @@
         }
 
         // start typing after page has loaded
-        window.onload = typeWriter;
-
+        window.addEventListener('DOMContentLoaded', typeWriter);
 
         // Set the date of the Computer Science Ball
         const eventDate = new Date("April 5, 2025 19:00:00").getTime(); // Set the event time (7 PM)
