@@ -23,8 +23,8 @@
  }
 
  .header h1 {
-     font-size: clamp(3em, 3vw, 2.5em);
-     letter-spacing: 5px;
+     font-size: clamp(1.45em, 3vw, 2.5em);
+     letter-spacing: clamp(0.1em, 0.2vw, 0.2em);
      animation: glowblue 3s infinite alternate;
      font-family: OCR A Std, monospace;
      font-weight: bolder;
@@ -32,7 +32,7 @@
  }
 
  .header h2 {
-     font-size: clamp(6em, 6vw, 5.5em);
+     font-size: clamp(2.9em, 8vw, 8em);
      margin-top: 1px;
      opacity: 0.8;
      white-space: nowrap;
@@ -44,7 +44,7 @@
 
  .header h3 {
      margin-top: 0px;
-     font-size: clamp(2.5em, 2vw, 2em);
+     font-size: clamp(1.2em, 2vw, 2em);
      animation: glowwhite 3s infinite alternate;
      margin-top: 1px;
      opacity: 0.8;
@@ -201,7 +201,8 @@
 
  section {
      height: 100%;
-     margin-top: 30%;
+     font-size: clamp(0.6em, 1.2vw, 1.2em);
+
 
      background-color: transparent;
      color: #fff;
@@ -268,9 +269,10 @@
  #cursor {
      display: inline-block;
      width: 8px;
-     height: 0.9em;
+     height: 0.8em;
      background-color: #ffffffb3;
      margin-left: 2px;
+     margin-bottom: 5px;
      animation: blinkCursor 0.8s steps(2) infinite;
      vertical-align: bottom;
  }
@@ -296,12 +298,11 @@
 
  section a {
      color: #ffffff;
-     text-decoration: none;
 
  }
 
  section h2 {
-     font-size: clamp(1em, 3vw, 3em);
+     font-size: clamp(2em, 3vw, 3em);
      margin-bottom: 10px;
      font-family: OCR A Std, monospace;
      animation: glowwhite 3s infinite alternate;
@@ -310,11 +311,10 @@
 
  section a:hover {
      color: #00bfff;
-     text-decoration: underline;
  }
 
  #smaller-text {
-     font-size: x-small;
+     font-size:clamp(0.8em, 1vw, 1em);
      color: #ffffff91
  }
 
@@ -336,7 +336,7 @@
  }
 
  #details {
-     font-size: clamp(0.8em, 1.2vw, 1.2em);
+     font-size: clamp(0.6em, 1.2vw, 1.2em);
      margin: 20px 20px;
  }
 
@@ -348,7 +348,7 @@
  #countdown {
      font-family: OCR A Std, monospace;
      font-weight: bold;
-     font-size: clamp(3em, 7vw, 7em);
+     font-size: clamp(1.5em, 7vw, 7em);
      color: #00bfff;
      animation: glowblue 3s infinite alternate;
 
@@ -360,7 +360,7 @@
 
  #fun {
      color: #ffffff;
-     font-size: clamp(1em, 3vw, 3em);
+     font-size: clamp(0.7em, 3vw, 3em);
 
      animation: glowwhite 3s infinite alternate;
  }
