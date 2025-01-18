@@ -1,0 +1,6 @@
+Motion Control was made by JapanYoshi (japanyoshi.deviantart.com) (born2bsporty.tumblr.com) (www.behance.net/japanyoshi).
+
+Free usage: Go ahead! I'll be happy to provide this if you're gonna use it. Hit me up and tell me where.
+Commercial usage: I'm gonna be fine with it. But since I wanna inflate my ego, hit me up at any of the above links, or email me at japanyoshi@gmail.com!
+
+This font uses the Open Font License.

@@ -2,7 +2,7 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-family: 'Orbitron';
  }
 
  body,
@@ -19,36 +19,49 @@
      justify-content: center;
      align-items: center;
      text-align: center;
-     color: #fff;
      position: relative;
  }
 
  .header h1 {
      font-size: clamp(3em, 3vw, 2.5em);
-     letter-spacing: 1px;
-     animation: glow 3s infinite alternate;
+     letter-spacing: 5px;
+     animation: glowblue 3s infinite alternate;
      font-family: OCR A Std, monospace;
-
+     font-weight: bolder;
+     color: #1997c2;
  }
 
  .header h2 {
-     font-size: 1.2em;
-     margin-top: 10px;
+     font-size: clamp(6em, 6vw, 5.5em);
+     margin-top: 1px;
      opacity: 0.8;
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
      white-space: nowrap;
+     color: #ffffff;
+     font-family: OCR A Std, monospace;
+     animation: glowblue 3s infinite alternate;
+     margin-bottom: 0px;
+ }
+
+ .header h3 {
+     margin-top: 0px;
+     font-size: clamp(2.5em, 2vw, 2em);
+     animation: glowwhite 3s infinite alternate;
+     margin-top: 1px;
+     opacity: 0.8;
+     letter-spacing: 5px;
+     white-space: nowrap;
+     color: white;
+     font-family: 'Motion Control Neue Lite', sans-serif;
+
  }
 
  .header p {
-     font-size: clamp(0.8em, 2vw, 1em);
-     margin-top: 5px;
-     margin-left: clamp(1rem, 4vw, 2rem);
-     margin-right: clamp(1rem, 4vw, 2rem);
-     opacity: 0.8;
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     margin-top: 20px;
+     margin-left: clamp(2rem, 12vw, 14rem);
+     margin-right: clamp(2rem, 12vw, 14rem);
  }
 
- @keyframes glow {
+ @keyframes glowblue {
      from {
          text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
      }
@@ -57,6 +70,28 @@
          text-shadow: 0 0 20px #1e90ff, 0 0 40px #1e90ff;
      }
  }
+
+ @keyframes glowpink {
+     from {
+         text-shadow: 0 0 10px #ffa1f1, 0 0 20px #ffa1f1;
+     }
+
+     to {
+         text-shadow: 0 0 20px #ff7eec, 0 0 40px #ff7eec;
+     }
+ }
+
+ @keyframes glowwhite {
+     from {
+         text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+     }
+
+     to {
+         text-shadow: 0 0 20px #ffffffa3, 0 0 40px #ffffffa3;
+     }
+ }
+
+
 
  .btn {
      margin-top: 30px;
@@ -134,7 +169,7 @@
  .fish {
      position: absolute;
      font-size: 1.5em;
-     color: #1e8fff97;
+     /* color: #1e8fff97; */
      white-space: nowrap;
      animation-timing-function: linear;
      animation-iteration-count: infinite;
@@ -167,14 +202,19 @@
  section {
      height: 100%;
      margin-top: 30%;
-     padding-top: clamp(20%, 25vh, 30%);
-     padding-bottom: clamp(20%, 25vw, 30%);
+
      background-color: transparent;
      color: #fff;
-     text-align: center;
      opacity: 0;
      transform: translateY(20px);
      transition: opacity 1s ease-out, transform 1s ease-out;
+
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+
+     align-items: center;
+     text-align: center;
  }
 
  html {
@@ -209,10 +249,20 @@
  }
 
  #typed-text {
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     /* font-family: 'Fira Code', 'Consolas', 'Courier New', monospace; */
+     /* font-family: 'Motion Control Neue Lite', sans-serif; */
+     /* font-family: 'Vipnagorgialla', sans-serif; */
+     /* font-family: 'Espacio Cuadrado', sans-serif; */
+     font-family: 'Orbitron';
      color: #ffffff;
      white-space: pre-wrap;
      word-wrap: break-word;
+
+     font-size: clamp(0.8em, 2vw, 1em);
+     margin-top: 5px;
+
+     justify-content: center;
+     align-self: center;
  }
 
  #cursor {
@@ -240,7 +290,6 @@
  }
 
  section p {
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
      margin-top: 5px;
      margin-bottom: 5px
  }
@@ -248,13 +297,14 @@
  section a {
      color: #ffffff;
      text-decoration: none;
-     font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
 
  }
 
  section h2 {
+     font-size: clamp(1em, 3vw, 3em);
      margin-bottom: 10px;
      font-family: OCR A Std, monospace;
+     animation: glowwhite 3s infinite alternate;
 
  }
 
@@ -286,7 +336,7 @@
  }
 
  #details {
-     font-size: clamp(0.8em, 2vw, 1em);
+     font-size: clamp(0.8em, 1.2vw, 1.2em);
      margin: 20px 20px;
  }
 
@@ -298,9 +348,9 @@
  #countdown {
      font-family: OCR A Std, monospace;
      font-weight: bold;
-     font-size: 1.8em;
+     font-size: clamp(3em, 7vw, 7em);
      color: #00bfff;
-     animation: glow 3s infinite alternate;
+     animation: glowblue 3s infinite alternate;
 
      background-color: rgba(0, 0, 0, 0);
      display: inline-block;
@@ -309,6 +359,8 @@
  }
 
  #fun {
-     color: #00bfff;
-     animation: glow 3s infinite alternate;
+     color: #ffffff;
+     font-size: clamp(1em, 3vw, 3em);
+
+     animation: glowwhite 3s infinite alternate;
  }
