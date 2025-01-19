@@ -61,31 +61,41 @@
      margin-right: clamp(2rem, 12vw, 14rem);
  }
 
-@keyframes glowblue {
-    from {
-        text-shadow:
-            0 0 0.1em #1e8fffaa,  /* Consistent soft glow */
-            0 0 0.2em #1e8fff88;  /* Lighter outer glow */
-    }
-    to {
-        text-shadow:
-            0 0 0.3em #1998c2e6,  /* Stronger glow */
-            0 0 0.6em #1998c2cc;  /* More prominent outer glow */
-    }
-}
+ @keyframes glowblue {
+     from {
+         text-shadow:
+             0 0 0.1em #1e8fffaa,
+             /* Consistent soft glow */
+             0 0 0.2em #1e8fff88;
+         /* Lighter outer glow */
+     }
 
-@keyframes glowwhite {
-    from {
-        text-shadow:
-            0 0 0.1em #ffffffa3,  /* Softer glow */
-            0 0 0.2em #ffffff80;  /* Fainter outer glow */
-    }
-    to {
-        text-shadow:
-            0 0 0.25em #ffffffaa,  /* Brighter white glow */
-            0 0 0.5em #ffffff85;   /* Stronger outer glow */
-    }
-}
+     to {
+         text-shadow:
+             0 0 0.3em #1998c2e6,
+             /* Stronger glow */
+             0 0 0.6em #1998c2cc;
+         /* More prominent outer glow */
+     }
+ }
+
+ @keyframes glowwhite {
+     from {
+         text-shadow:
+             0 0 0.1em #ffffffa3,
+             /* Softer glow */
+             0 0 0.2em #ffffff80;
+         /* Fainter outer glow */
+     }
+
+     to {
+         text-shadow:
+             0 0 0.25em #ffffffaa,
+             /* Brighter white glow */
+             0 0 0.5em #ffffff85;
+         /* Stronger outer glow */
+     }
+ }
 
 
 
@@ -100,7 +110,7 @@
      transition: all 0.4s ease;
      border-radius: 30px;
      font-size: clamp(1.5em, 2vw, 2em);
-     /* width: clamp(50%, 70%, 300p x); */
+     width: clamp(50%, 70%, 300p x);
 
  }
 
@@ -118,8 +128,6 @@
      pointer-events: none;
      padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
      font-size: clamp(1.5em, 2vw, 2em);
-
-
  }
 
  #reveal-button.show {
@@ -196,7 +204,6 @@
  section {
      height: 100%;
      font-size: clamp(0.6em, 1.2vw, 1.2em);
-
 
      background-color: transparent;
      color: #fff;
@@ -293,7 +300,7 @@
  }
 
  #rsvp p {
-    font-size: clamp(1.5em, 1.2vw, 2em);
+     font-size: clamp(1.5em, 1.2vw, 2em);
 
  }
 
@@ -330,14 +337,30 @@
      text-align: left;
  }
 
- .details-labels p {
-     font-size: clamp(0.8em, 2vw, 1em);
+ .prog-grid {
+     display: grid;
+     margin: 0 auto;
 
+     font-size: clamp(0.9em, 1.2vw, 1.2em);
+     gap: 10px 30px;
+     grid-template-columns: 1fr 1fr;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: left;
+
+     justify-items: center;
+     max-width: 600px;
+ }
+
+ .details-labels p,
+ .prog-labels p {
+     font-size: clamp(0.8em, 2vw, 1em);
      font-weight: bold;
      margin: 5px 0;
  }
 
- #details {
+ #details,
+ #Programme {
      font-size: clamp(0.8em, 1.2vw, 1.2em);
      margin: 20px 20px;
  }
@@ -365,4 +388,91 @@
      font-size: clamp(0.8em, 3vw, 3em);
 
      animation: glowwhite 3s infinite alternate;
+ }
+
+ .menu-container {
+     position: fixed;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     align-items: center;
+     z-index: 1000;
+ }
+
+ .menu-button {
+     position: absolute;
+     left: 50%;
+     top: 10px;
+     transform: translateX(-50%);
+
+     opacity: 0;
+     visibility: hidden;
+     background-color: transparent;
+     border: none;
+
+     /* text-shadow: 0 0 0.3em #1998c2e6, 0 0 0.6em #1998c2cc; */
+     color: #1997c2;
+
+     padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
+     font-size: clamp(0.7em, 1.2vw, 1.5em);
+     width: auto;
+     white-space: nowrap;
+
+     margin: 0;
+     transition: all 0.3s ease;
+ }
+
+ .menu-button.show {
+     opacity: 1;
+     visibility: visible;
+     transition: transform 0.5s ease, opacity 0.5s ease;
+     pointer-events: all;
+ }
+
+ .menu-button.button-1.show {
+     transform: translateX(-48vw);
+ }
+
+ .menu-button.button-2.show {
+     transform: translateX(38vw);
+ }
+
+ .menu-button.button-3.show {
+     transform: translateX(-32vw);
+ }
+
+ .menu-button.button-4.show {
+     transform: translateX(10vw);
+ }
+
+ .menu-button.button-5.show {
+     transform: translateX(25vw);
+ }
+
+ #navigate-to {
+     position: absolute;
+     top: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+
+     z-index: 1009;
+
+     background-color: transparent;
+     color: white;
+     border: none;
+     cursor: pointer;
+
+     padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
+     font-size: clamp(0.7em, 1.2vw, 1.5em);
+     width: clamp(50%, 70%, 300p x);
+ }
+
+ #navigate-to:hover {
+     text-shadow: 0 0 0.25em #ffffffaa, 0 0 0.5em #ffffff85;
+ }
+
+ .menu-button:hover {
+     text-shadow: 0 0 0.25em #1998c2e6, 0 0 0.5em #1998c2cc;
+     color: #1997c2;
  }

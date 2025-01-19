@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "name": "da-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-nosnitram/CS-Ball-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-nosnitram/CS-Ball-Website/issues"
+  },
+  "homepage": "https://github.com/a-nosnitram/CS-Ball-Website#readme"
 }
