@@ -61,7 +61,7 @@
      margin-right: clamp(2rem, 12vw, 14rem);
  }
 
- @keyframes glowblue {
+ /* @keyframes glowblue {
     from {
         text-shadow: 0 0 clamp(0.08em, 0.1vw, 0.12em) #1e8fffaa, 0 0 clamp(0.1em, 0.12vw, 0.15em) #1e8fffaa;
     }
@@ -77,33 +77,33 @@
     to {
         text-shadow: 0 0 clamp(0.12em, 0.15vw, 0.2em) #ffffffb4, 0 0 clamp(0.4em, 0.4vw, 0.5em) #ffffffb4;
     }
-}
+} */
 
-/* @keyframes glowblue {
+@keyframes glowblue {
     from {
         text-shadow:
-            0 0 0.08em #00bfff99,
-            0 0 0.1em #00bfff66;
+            0 0 0.1em #1e8fffaa,  /* Consistent soft glow */
+            0 0 0.2em #1e8fff88;  /* Lighter outer glow */
     }
     to {
         text-shadow:
-            0 0 0.1em rgba(30, 143, 255, 0.779),
-            0 0 0.2em  #1e8fff91;
+            0 0 0.3em #1998c2e6,  /* Stronger glow */
+            0 0 0.6em #1998c2cc;  /* More prominent outer glow */
     }
 }
 
 @keyframes glowwhite {
     from {
         text-shadow:
-            0 0 0.08em #ffffff99,
-            0 0 0.1em #ffffff66;
+            0 0 0.1em #ffffffa3,  /* Softer glow */
+            0 0 0.2em #ffffff80;  /* Fainter outer glow */
     }
     to {
         text-shadow:
-            0 0 0.1em rgba(255, 255, 255, 0.857),
-            0 0 0.2em  #ffffffa8;
+            0 0 0.25em #ffffffaa,  /* Brighter white glow */
+            0 0 0.5em #ffffff85;   /* Stronger outer glow */
     }
-} */
+}
 
 
 
