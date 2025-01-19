@@ -421,7 +421,7 @@
      color: #1997c2;
 
      padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
-     font-size: clamp(0.7em, 1.2vw, 1.5em);
+     font-size: clamp(0.6em, 1.2vw, 1.5em);
      width: auto;
      white-space: nowrap;
 
@@ -437,15 +437,15 @@
  }
 
  .menu-button.button-1.show {
-     transform: translateX(-47vw);
+     transform: translateX(-46vw);
  }
 
  .menu-button.button-2.show {
-     transform: translateX(35vw);
+     transform: translateX(33vw);
  }
 
  .menu-button.button-3.show {
-     transform: translateX(-31vw);
+     transform: translateX(-30vw);
  }
 
  .menu-button.button-4.show {
@@ -453,7 +453,7 @@
  }
 
  .menu-button.button-5.show {
-     transform: translateX(22vw);
+     transform: translateX(21vw);
  }
 
  #navigate-to {
@@ -470,7 +470,7 @@
      cursor: pointer;
 
      padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
-     font-size: clamp(0.7em, 1.2vw, 1.5em);
+     font-size: clamp(0.6em, 1.2vw, 1.5em);
      width: clamp(50%, 70%, 300p x);
  }
 
