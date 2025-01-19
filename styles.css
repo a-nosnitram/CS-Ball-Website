@@ -23,7 +23,7 @@
  }
 
  .header h1 {
-     font-size: clamp(1.7em, 3.5vw, 3.5em);
+     font-size: clamp(1.65em, 3.5vw, 3.5em);
      letter-spacing: clamp(0.1em, 0.2vw, 0.2em);
      animation: glowblue 3s infinite alternate;
      font-family: OCR A Std, monospace;
@@ -32,7 +32,7 @@
  }
 
  .header h2 {
-     font-size: clamp(3.35em, 7vw, 8em);
+     font-size: clamp(3.3em, 7vw, 8em);
      margin-top: 1px;
      opacity: 0.8;
      white-space: nowrap;
@@ -44,7 +44,7 @@
 
  .header h3 {
      margin-top: 0px;
-     font-size: clamp(1.5em, 2.5vw, 2.5em);
+     font-size: clamp(1.2em, 2.5vw, 2.5em);
      animation: glowwhite 3s infinite alternate;
      margin-top: 1px;
      opacity: 0.8;
@@ -295,8 +295,6 @@
  section p {
      margin-top: 5px;
      margin-bottom: 5px;
-
-
  }
 
  #rsvp p {
@@ -309,10 +307,12 @@
  }
 
  section h2 {
-     font-size: clamp(2.8em, 3vw, 3em);
+     font-size: clamp(2.6em, 3vw, 3em);
      margin-bottom: 10px;
      font-family: OCR A Std, monospace;
      animation: glowwhite 3s infinite alternate;
+     white-space: nowrap;
+
 
  }
 
@@ -322,7 +322,8 @@
 
  #smaller-text {
      font-size: clamp(0.8em, 1vw, 1em);
-     color: #ffffff91
+     color: #ffffff91;
+     white-space: wrap;
  }
 
  .details-grid {
@@ -335,18 +336,19 @@
      margin-left: auto;
      margin-right: auto;
      text-align: left;
+     white-space: nowrap;
  }
 
  .prog-grid {
      display: grid;
      margin: 0 auto;
 
-     font-size: clamp(0.9em, 1.2vw, 1.2em);
      gap: 10px 30px;
      grid-template-columns: 1fr 1fr;
      margin-left: auto;
      margin-right: auto;
      text-align: left;
+     white-space: nowrap;
 
      justify-items: center;
      max-width: 600px;
@@ -354,15 +356,18 @@
 
  .details-labels p,
  .prog-labels p {
-     font-size: clamp(0.8em, 2vw, 1em);
+     font-size: clamp(0.8em, 1.2vw, 1.2em);
      font-weight: bold;
      margin: 5px 0;
+     white-space: nowrap;
+
  }
 
  #details,
  #Programme {
      font-size: clamp(0.8em, 1.2vw, 1.2em);
      margin: 20px 20px;
+     white-space: nowrap;
  }
 
  #countdown-container {
@@ -373,7 +378,7 @@
  #countdown {
      font-family: OCR A Std, monospace;
      font-weight: bold;
-     font-size: clamp(3.4em, 6vw, 7em);
+     font-size: clamp(3.2em, 6vw, 7em);
      color: #00bfff;
      animation: glowblue 3s infinite alternate;
 
@@ -381,6 +386,7 @@
      display: inline-block;
      padding: 10px 20px;
      border-radius: 10px;
+     white-space: nowrap;
  }
 
  #fun {
@@ -431,23 +437,23 @@
  }
 
  .menu-button.button-1.show {
-     transform: translateX(-48vw);
+     transform: translateX(-47vw);
  }
 
  .menu-button.button-2.show {
-     transform: translateX(38vw);
+     transform: translateX(35vw);
  }
 
  .menu-button.button-3.show {
-     transform: translateX(-32vw);
+     transform: translateX(-31vw);
  }
 
  .menu-button.button-4.show {
-     transform: translateX(10vw);
+     transform: translateX(9vw);
  }
 
  .menu-button.button-5.show {
-     transform: translateX(25vw);
+     transform: translateX(22vw);
  }
 
  #navigate-to {
