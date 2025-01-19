@@ -62,34 +62,48 @@
  }
 
  @keyframes glowblue {
-     from {
-         text-shadow: 0 0 clamp(5px, 1vw, 10px) #00bfff, 0 0 clamp(10px, 2vw, 20px) #00bfff;
-     }
+    from {
+        text-shadow: 0 0 clamp(0.08em, 0.1vw, 0.12em) #1e8fffaa, 0 0 clamp(0.1em, 0.12vw, 0.15em) #1e8fffaa;
+    }
+    to {
+        text-shadow: 0 0 clamp(0.2em, 0.25vw, 0.3em) #1998c2e6, 0 0 clamp(0.4em, 0.4vw, 0.5em) #1998c2e6;
+    }
+}
 
-     to {
-         text-shadow: 0 0 clamp(10px, 2vw, 20px) #1e90ff, 0 0 clamp(20px, 4vw, 40px) #1e90ff;
-     }
- }
+@keyframes glowwhite {
+    from {
+        text-shadow: 0 0 clamp(0.08em, 0.1vw, 0.15em) #ffffffa3, 0 0 clamp(0.1em, 0.15vw, 0.18em) #ffffffa3;
+    }
+    to {
+        text-shadow: 0 0 clamp(0.12em, 0.15vw, 0.2em) #ffffffb4, 0 0 clamp(0.4em, 0.4vw, 0.5em) #ffffffb4;
+    }
+}
 
- @keyframes glowpink {
-     from {
-         text-shadow: 0 0 clamp(5px, 1vw, 10px) #ffa1f1, 0 0 clamp(10px, 2vw, 20px) #ffa1f1;
-     }
+/* @keyframes glowblue {
+    from {
+        text-shadow:
+            0 0 0.08em #00bfff99,
+            0 0 0.1em #00bfff66;
+    }
+    to {
+        text-shadow:
+            0 0 0.1em rgba(30, 143, 255, 0.779),
+            0 0 0.2em  #1e8fff91;
+    }
+}
 
-     to {
-         text-shadow: 0 0 clamp(10px, 2vw, 20px) #ff7eec, 0 0 clamp(20px, 4vw, 40px) #ff7eec;
-     }
- }
-
- @keyframes glowwhite {
-     from {
-         text-shadow: 0 0 clamp(5px, 1vw, 10px) #ffffff, 0 0 clamp(10px, 2vw, 20px) #ffffff;
-     }
-
-     to {
-         text-shadow: 0 0 clamp(10px, 2vw, 20px) #ffffffa3, 0 0 clamp(20px, 4vw, 40px) #ffffffa3;
-     }
- }
+@keyframes glowwhite {
+    from {
+        text-shadow:
+            0 0 0.08em #ffffff99,
+            0 0 0.1em #ffffff66;
+    }
+    to {
+        text-shadow:
+            0 0 0.1em rgba(255, 255, 255, 0.857),
+            0 0 0.2em  #ffffffa8;
+    }
+} */
 
 
 
@@ -291,12 +305,18 @@
 
  section p {
      margin-top: 5px;
-     margin-bottom: 5px
+     margin-bottom: 5px;
+
+
+ }
+
+ #rsvp p {
+    font-size: clamp(1.5em, 1.2vw, 2em);
+
  }
 
  section a {
      color: #ffffff;
-
  }
 
  section h2 {
@@ -348,7 +368,7 @@
  #countdown {
      font-family: OCR A Std, monospace;
      font-weight: bold;
-     font-size: clamp(3.5em, 6vw, 7em);
+     font-size: clamp(3.4em, 6vw, 7em);
      color: #00bfff;
      animation: glowblue 3s infinite alternate;
 
