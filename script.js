@@ -72,9 +72,8 @@ const observer = new IntersectionObserver(entries => {
 
             menuButtons.forEach(button => {
                 button.classList.remove('highlight');
-                // console.log(button.classList);
-
             });
+
             const activeButton = document.querySelector(`.menu-button[data-section="${entry.target.id}"]`);
             if (activeButton) {
                 activeButton.classList.add('highlight');

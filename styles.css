@@ -49,23 +49,23 @@
  }
 
  #reveal-text {
-    /* margin-top: 400px; */
+     /* margin-top: 400px; */
 
-    opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
-    transform: translateY(20px);
+     opacity: 0;
+     transition: opacity 1s ease, transform 1s ease;
+     transform: translateY(20px);
 
 
-    font-family: 'Orbitron';
-    color: #ffffff;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+     font-family: 'Orbitron';
+     color: #ffffff;
+     white-space: pre-wrap;
+     word-wrap: break-word;
 
-    font-size: clamp(0.8em, 2vw, 1em);
-    margin-top: 5px;
+     font-size: clamp(0.8em, 2vw, 1em);
+     margin-top: 5px;
 
-    justify-content: center;
-    align-self: center;
+     justify-content: center;
+     align-self: center;
  }
 
  @keyframes glowblue {
@@ -123,7 +123,7 @@
 
  .btn:hover,
  .btn:active,
- .top-button:hover{
+ .top-button:hover {
      background-color: #00bfff;
      color: #000;
      box-shadow: 0 0 20px #00bfff;
@@ -138,7 +138,9 @@
      font-size: clamp(1.5em, 2vw, 2em);
  }
 
- #reveal-button.show, #reveal-text.show, .top-button.show {
+ #reveal-button.show,
+ #reveal-text.show,
+ .top-button.show {
      opacity: 1;
      transform: translateY(0);
      pointer-events: auto;
@@ -423,9 +425,9 @@
  }
 
  .menu-container.show {
-    /* background: linear-gradient(180deg, #ffffff89, #ffffff2d, #ffffff00); */
-    background-color: #000;
-    background: linear-gradient(180deg, #00000089, #ffffff00);
+     /* background: linear-gradient(180deg, #ffffff89, #ffffff2d, #ffffff00); */
+     background-color: #000;
+     background: linear-gradient(180deg, #00000089, #ffffff00);
 
  }
 
@@ -541,4 +543,10 @@
  .menu-button.show.highlight {
      text-shadow: 0 0 0.25em #1998c2e6, 0 0 0.5em #1998c2cc;
      color: #1997c2;
+ }
+
+ @media (max-width: 768px) {
+     .menu-button:hover {
+         text-shadow: none;
+     }
  }
