@@ -57,6 +57,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const sections = document.querySelectorAll('section');
 const menuButtons = document.querySelectorAll('.menu-button');
+const topButton = document.querySelector('.top-button');
 
 const options = {
     root: null,
@@ -76,7 +77,10 @@ const observer = new IntersectionObserver(entries => {
             });
             const activeButton = document.querySelector(`.menu-button[data-section="${entry.target.id}"]`);
             if (activeButton) {
-                    activeButton.classList.add('highlight');
+                activeButton.classList.add('highlight');
+                topButton.classList.add('show');
+            } else {
+                topButton.classList.remove('show');
             }
 
         }
@@ -90,7 +94,8 @@ sections.forEach(section => {
 
 // TYPING OUT THE TEXT
 
-const text = "Whale, hello there! Get ready to make waves at the most unforgettable night of the year! Join us for an evening of ceilidh, some really good food, and poker. Given how tide down with work you are this semester, grant yourself an evening with dazzling sea-inspired decor, delightful surprises, and music to keep you grooving. And don't be shellfish—bring your friends (we love some good ol' pier pressure)! So, water you waiting for? Seas the day!";
+const text = "Shell We Dance Under the C ?";
+
 let i = 0;
 const typingSpeed = 40; // in ms
 
@@ -100,8 +105,13 @@ function typeWriter() {
         i++;
         setTimeout(typeWriter, typingSpeed);
     } else {
-        // show the button after typing is complete
-        document.getElementById("reveal-button").classList.add("show");
+        setTimeout(() => {
+            document.getElementById("reveal-text").classList.add("show");
+        }, 300); // Delay before showing the reveal-text
+
+        setTimeout(() => {
+            document.getElementById("reveal-button").classList.add("show");
+        }, 600);
     }
 }
 
