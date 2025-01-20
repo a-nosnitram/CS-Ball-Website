@@ -22,14 +22,15 @@
     <div id="menu" class="menu-container">
         <button class="navigate-button" id="navigate-to">Menu</button>
         <div id="menu" class="menu-container">
-            <a href="#details"><button class="menu-button button-2">Details</button></a>
-            <a href="#Programme"><button class="menu-button button-3">Shedule</button></a>
-            <a href="#rsvp"><button class="menu-button button-4">RSVP</button></a>
-            <a href="#timer"><button class="menu-button button-5">Timer</button></a>
+            <a href="#details"><button class="menu-button" id="button-2" data-section="details">Details</button></a>
+            <a href="#Programme"><button class="menu-button" id="button-4" data-section="Programme">Agenda</button></a>
+            <a href="#rsvp"><button class="menu-button" id="button-3" data-section="rsvp">RSVP</button></a>
+            <a href="#timer"><button class="menu-button" id="button-5" data-section="timer">Timer</button></a>
         </div>
 
     </div>
     <a href="#top"><button class="top-button">↑</button></a>
+    <section id="top">
     <div id="top" class="header">
         <h1>COMPUTER SCIENCE </h1>
         <h2>BALL 2025</h1>
@@ -42,6 +43,7 @@
 
             <div class="fish-container"></div>
     </div>
+    </section>
 
     <!-- Details Section -->
     <section id="details">
@@ -69,11 +71,11 @@
             </div>
         </div>
 
-        <a href="#Programme"><button class="btn">View Programme</button></a>
+        <a href="#Programme"><button class="btn">View Schedule</button></a>
     </section>
 
     <section id="Programme">
-        <h2>Programme</h2>
+        <h2>Schedule</h2>
         <div class="prog-grid">
             <div class="prog-labels">
                 <p><i class="fa-solid fa-utensils"></i> Dinner</p>

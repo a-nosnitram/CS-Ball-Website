@@ -203,7 +203,6 @@
 
  section {
      height: 100%;
-     font-size: clamp(0.6em, 1.2vw, 1.2em);
 
      background-color: transparent;
      color: #fff;
@@ -247,14 +246,9 @@
  section.visible {
      opacity: 1;
      transform: translateY(0);
-
  }
 
  #typed-text {
-     /* font-family: 'Fira Code', 'Consolas', 'Courier New', monospace; */
-     /* font-family: 'Motion Control Neue Lite', sans-serif; */
-     /* font-family: 'Vipnagorgialla', sans-serif; */
-     /* font-family: 'Espacio Cuadrado', sans-serif; */
      font-family: 'Orbitron';
      color: #ffffff;
      white-space: pre-wrap;
@@ -298,7 +292,7 @@
  }
 
  #rsvp p {
-     font-size: clamp(1.5em, 1.2vw, 2em);
+     font-size: clamp(1em, 1.2vw, 2em);
 
  }
 
@@ -306,14 +300,22 @@
      color: #ffffff;
  }
 
- section h2 {
-     font-size: clamp(2.6em, 3vw, 3em);
+ #rsvp h2,
+ #Programme h2,
+ #details h2 {
+     font-size: clamp(1.6em, 3vw, 3em);
      margin-bottom: 10px;
      font-family: OCR A Std, monospace;
      animation: glowwhite 3s infinite alternate;
      white-space: nowrap;
+ }
 
-
+ #rsvp,
+ #Programme,
+ #details,
+ #timer {
+     margin-left: 6vw;
+     margin-right: 6vw;
  }
 
  section a:hover {
@@ -327,6 +329,8 @@
  }
 
  .details-grid {
+     font-size: clamp(0.8em, 1.2vw, 1.2em);
+
      display: grid;
      grid-template-columns: 1fr 2fr;
      gap: 5px 15px;
@@ -337,13 +341,20 @@
      margin-right: auto;
      text-align: left;
      white-space: nowrap;
+
+     left: 50%;
+     transform: translateX(5%);
  }
 
  .prog-grid {
+     left: 50%;
+     transform: translateX(5%);
+     font-size: clamp(0.8em, 1.2vw, 1.2em);
+
      display: grid;
      margin: 0 auto;
 
-     gap: 10px 30px;
+     gap: 5px 30px;
      grid-template-columns: 1fr 1fr;
      margin-left: auto;
      margin-right: auto;
@@ -356,19 +367,11 @@
 
  .details-labels p,
  .prog-labels p {
-     font-size: clamp(0.8em, 1.2vw, 1.2em);
      font-weight: bold;
      margin: 5px 0;
      white-space: nowrap;
-
  }
 
- #details,
- #Programme {
-     font-size: clamp(0.8em, 1.2vw, 1.2em);
-     margin: 20px 20px;
-     white-space: nowrap;
- }
 
  #countdown-container {
      text-align: center;
@@ -378,7 +381,7 @@
  #countdown {
      font-family: OCR A Std, monospace;
      font-weight: bold;
-     font-size: clamp(3.2em, 6vw, 7em);
+     font-size: clamp(2em, 6vw, 7em);
      color: #00bfff;
      animation: glowblue 3s infinite alternate;
 
@@ -404,7 +407,22 @@
      display: flex;
      align-items: center;
      z-index: 1000;
+     padding: 10px;
+     width: 100%;
+     height: 12%;
+     transition: all 0.7s ease;
+
+
  }
+
+ .menu-container.show {
+    /* background: linear-gradient(180deg, #ffffff89, #ffffff2d, #ffffff00); */
+    background-color: #000;
+    background: linear-gradient(180deg, #00000089, #ffffff00);
+
+ }
+
+
 
  .menu-button {
      position: absolute;
@@ -435,38 +453,38 @@
  }
 
 
- .menu-button.button-2.show {
+ #button-2.show {
      transform: translateX(clamp(-60vw, -38vw, -45vw));
  }
 
- .menu-button.button-3.show {
+ #button-3.show {
      transform: translateX(clamp(11vw, 18vw, 15vw));
  }
 
- .menu-button.button-4.show {
+ #button-4.show {
      transform: translateX(clamp(-30vw, -20vw, -25vw));
  }
 
- .menu-button.button-5.show {
+ #button-5.show {
      transform: translateX(clamp(20vw, 35vw, 50vw));
  }
 
  @media (max-width: 768px) {
 
-     .menu-button.button-2.show {
+     #button-2.show {
          transform: translateX(clamp(-60vw, -38vw, -45vw));
      }
 
-     .menu-button.button-3.show {
+     #button-3.show {
          transform: translateX(clamp(7vw, 9vw, 12vw));
      }
 
-     .menu-button.button-4.show {
-         transform: translateX(clamp(-30vw, -20vw, -25vw));
+     #button-4.show {
+         transform: translateX(clamp(-32vw, -22vw, -27vw));
      }
 
-     .menu-button.button-5.show {
-         transform: translateX(clamp(20vw, 29vw, 30vw));
+     #button-5.show {
+         transform: translateX(clamp(18vw, 27vw, 29vw));
      }
  }
 
@@ -510,7 +528,8 @@
      text-shadow: 0 0 0.25em #ffffffaa, 0 0 0.5em #ffffff85;
  }
 
- .menu-button:hover {
+ .menu-button:hover,
+ .menu-button.show.highlight {
      text-shadow: 0 0 0.25em #1998c2e6, 0 0 0.5em #1998c2cc;
      color: #1997c2;
  }

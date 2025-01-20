@@ -1,6 +1,6 @@
 // generating floating binary particles
 const particlesContainer = document.querySelector('.particles');
-const numParticles = 60;
+const numParticles = 50;
 
 for (let i = 0; i < numParticles; i++) {
     let particle = document.createElement('div');
@@ -56,14 +56,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 const sections = document.querySelectorAll('section');
+const menuButtons = document.querySelectorAll('.menu-button');
+
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5 // Adjust this value as needed
+};
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+
+            menuButtons.forEach(button => {
+                button.classList.remove('highlight');
+                // console.log(button.classList);
+
+            });
+            const activeButton = document.querySelector(`.menu-button[data-section="${entry.target.id}"]`);
+            if (activeButton) {
+                    activeButton.classList.add('highlight');
+            }
+
         }
+
     });
-});
+}, options);
 
 sections.forEach(section => {
     observer.observe(section);
@@ -115,10 +134,13 @@ const countdownTimer = setInterval(function () {
 // MENU
 document.addEventListener('DOMContentLoaded', () => {
     const navigateButton = document.getElementById('navigate-to');
+    const menuContainer = document.querySelector('.menu-container');
+
     navigateButton.addEventListener('click', () => {
         const menuButtons = document.querySelectorAll('.menu-button');
         menuButtons.forEach(button => {
             button.classList.toggle('show');
         });
+        menuContainer.classList.toggle('show');
     });
 });
