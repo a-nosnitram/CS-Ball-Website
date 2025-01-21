@@ -423,15 +423,15 @@
  @media (max-width: 768px) {
 
      #button-2.show {
-         transform: translateX(clamp(-60vw, -38vw, -45vw));
-     }
+        transform: translateX(clamp(-46vw, -50vw, -52vw));
+    }
 
      #button-3.show {
          transform: translateX(clamp(7vw, 9vw, 12vw));
      }
 
      #button-4.show {
-         transform: translateX(clamp(-32vw, -22vw, -27vw));
+         transform: translateX(clamp(-29vw, -28vw, -30vw));
      }
 
      #button-5.show {
