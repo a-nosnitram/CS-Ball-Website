@@ -17,36 +17,30 @@
 </head>
 
 <body>
+    <div class="particles"></div>
+    <div class="fish-container"></div>
+
+    <a href="#top"><button class="top-button">↑</button></a>
 
     <!-- menu to access all the sections -->
+    <button class="navigate-button" id="navigate-to">Menu</button>
     <div id="menu" class="menu-container">
-        <button class="navigate-button" id="navigate-to">Menu</button>
-        <div id="menu" class="menu-container">
-            <a href="#details"><button class="menu-button" id="button-2" data-section="details">Details</button></a>
-            <a href="#Programme"><button class="menu-button" id="button-4" data-section="Programme">Agenda</button></a>
-            <a href="#rsvp"><button class="menu-button" id="button-3" data-section="rsvp">RSVP</button></a>
-            <a href="#timer"><button class="menu-button" id="button-5" data-section="timer">Timer</button></a>
-        </div>
-
+        <a href="#details"><button class="menu-button" id="button-2" data-section="details">Details</button></a>
+        <a href="#Programme"><button class="menu-button" id="button-4" data-section="Programme">Agenda</button></a>
+        <a href="#rsvp"><button class="menu-button" id="button-3" data-section="rsvp">RSVP</button></a>
+        <a href="#timer"><button class="menu-button" id="button-5" data-section="timer">Timer</button></a>
     </div>
-    <a href="#top"><button class="top-button">↑</button></a>
+
     <section id="top">
-    <div id="top" class="header">
-        <h1>COMPUTER SCIENCE </h1>
-        <h2>BALL 2025</h1>
-
-            <h3 id="typewriter"><span id="typed-text"></span><span id="cursor"></span></h3>
-            <p id="reveal-text">Whale, hello there! Get ready to make waves at the most unforgettable night of the year! Join us for an evening of ceilidh, some really good food, and poker. Given how tide down with work you are this semester, grant yourself an evening with dazzling sea-inspired decor, delightful surprises, and music to keep you grooving. And don't be shellfish—bring your friends (we love some good ol' pier pressure)! So, water you waiting for? Seas the day!</p>
-
-            <a href="#details"><button class="btn" id="reveal-button">See the details</button></a>
-
-            <div class="particles"></div>
-
-            <div class="fish-container"></div>
-    </div>
+        <div id="top" class="header">
+            <h1>COMPUTER SCIENCE </h1>
+            <h2>BALL 2025</h1>
+                <h3 id="typewriter"><span id="typed-text"></span><span id="cursor"></span></h3>
+                <p id="reveal-text">Whale, hello there! Get ready to make waves at the most unforgettable night of the year! Join us for an evening of ceilidh, some really good food, and poker. Given how tide down with work you are this semester, grant yourself an evening with dazzling sea-inspired decor, delightful surprises, and music to keep you grooving. And don't be shellfish—bring your friends (we love some good ol' pier pressure)! So, water you waiting for? Seas the day!</p>
+                <a href="#details"><button class="btn" id="reveal-button">See the details</button></a>
+        </div>
     </section>
 
-    <!-- Details Section -->
     <section id="details">
 
         <h2>Event Details</h2>
@@ -98,7 +92,6 @@
 
     </section>
 
-    <!-- RSVP Section -->
     <section id="rsvp">
         <h2>Reserve Your Spot</h2>
         <p>Buy your ticket for only 70£.</p>
@@ -108,7 +101,6 @@
         <a href="#timer"><button class="btn"> How long shell I wait? </button></a>
     </section>
 
-    <!-- timer section -->
     <section id="timer">
         <div id="countdown-container">
             <p id="countdown"></p>
@@ -121,4 +113,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

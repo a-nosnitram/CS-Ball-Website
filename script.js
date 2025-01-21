@@ -1,46 +1,50 @@
 // generating floating binary particles
-const particlesContainer = document.querySelector('.particles');
-const numParticles = 50;
+document.addEventListener('DOMContentLoaded', () => {
 
-for (let i = 0; i < numParticles; i++) {
-    let particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.textContent = Math.random() < 0.5 ? '0' : '1';
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-    particle.style.opacity = Math.random();
-    particlesContainer.appendChild(particle);
-}
+    const particlesContainer = document.querySelector('.particles');
+    const numParticles = 50;
 
-// fish fish fish
-const fishContainer = document.querySelector('.fish-container');
-const numFish = 10;
-
-for (let i = 0; i < numFish; i++) {
-    let fish = document.createElement('div');
-    fish.classList.add('fish');
-    fish.textContent = ' }<))))*> ';
-    fish.style.top = `${Math.random() * 90}%`;
-    fish.style.animationDuration = `${Math.random() * 10 + 8}s`;
-
-    const fishSize = Math.random() * 0.7 + 0.5;
-    fish.style.fontSize = `${fishSize}em`;
-
-    if (fishSize < 0.8) {
-        fish.style.color = '#1e8fff97'; // darker colour for smaller fish
-    } else {
-        fish.style.color = '#1e90ff'; // brighter colour for larger fish
+    for (let i = 0; i < numParticles; i++) {
+        let particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.textContent = Math.random() < 0.5 ? '0' : '1';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        particle.style.opacity = Math.random();
+        particlesContainer.appendChild(particle);
     }
 
-    // swimming directions
-    if (i % 2 === 0) {
-        fish.style.animationName = 'swimRight';
-    } else {
-        fish.style.animationName = 'swimLeft';
-    }
+    // fish fish fish
+    const fishContainer = document.querySelector('.fish-container');
+    const numFish = 10;
 
-    fishContainer.appendChild(fish);
-}
+    for (let i = 0; i < numFish; i++) {
+        let fish = document.createElement('div');
+        fish.classList.add('fish');
+        fish.textContent = ' }<))))*> ';
+        fish.style.top = `${Math.random() * 90}%`;
+        fish.style.opacity = 1 - fish.style.top.replace('%', '') / 100 + 0.1;
+        fish.style.animationDuration = `${Math.random() * 10 + 8}s`;
+
+        const fishSize = Math.random() * 0.7 + 0.5;
+        fish.style.fontSize = `${fishSize}em`;
+
+        if (fishSize < 0.8) {
+            fish.style.color = '#1e8fff97'; // darker colour for smaller fish
+        } else {
+            fish.style.color = '#1e90ff'; // brighter colour for larger fish
+        }
+
+        // swimming directions
+        if (i % 2 === 0) {
+            fish.style.animationName = 'swimRight';
+        } else {
+            fish.style.animationName = 'swimLeft';
+        }
+
+        fishContainer.appendChild(fish);
+    }
+});
 
 // smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

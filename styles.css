@@ -12,7 +12,7 @@
      overflow-x: hidden;
  }
 
- .header {
+ .header  {
      height: 100vh;
      display: flex;
      flex-direction: column;
@@ -43,27 +43,20 @@
  }
 
  .header p {
-     /* margin-top: 400px; */
      margin-left: clamp(2rem, 12vw, 14rem);
      margin-right: clamp(2rem, 12vw, 14rem);
  }
 
  #reveal-text {
-     /* margin-top: 400px; */
-
      opacity: 0;
      transition: opacity 1s ease, transform 1s ease;
      transform: translateY(20px);
-
-
      font-family: 'Orbitron';
      color: #ffffff;
      white-space: pre-wrap;
      word-wrap: break-word;
-
      font-size: clamp(0.8em, 2vw, 1em);
      margin-top: 5px;
-
      justify-content: center;
      align-self: center;
  }
@@ -72,17 +65,13 @@
      from {
          text-shadow:
              0 0 0.1em #1e8fffaa,
-             /* Consistent soft glow */
              0 0 0.2em #1e8fff88;
-         /* Lighter outer glow */
      }
 
      to {
          text-shadow:
              0 0 0.3em #1998c2e6,
-             /* Stronger glow */
              0 0 0.6em #1998c2cc;
-         /* More prominent outer glow */
      }
  }
 
@@ -90,21 +79,15 @@
      from {
          text-shadow:
              0 0 0.1em #ffffffa3,
-             /* Softer glow */
              0 0 0.2em #ffffff80;
-         /* Fainter outer glow */
      }
 
      to {
          text-shadow:
              0 0 0.25em #ffffffaa,
-             /* Brighter white glow */
              0 0 0.5em #ffffff85;
-         /* Stronger outer glow */
      }
  }
-
-
 
  .btn {
      margin-top: 30px;
@@ -118,7 +101,6 @@
      border-radius: 30px;
      font-size: clamp(1.5em, 2vw, 2em);
      width: clamp(50%, 70%, 300p x);
-
  }
 
  .btn:hover,
@@ -146,17 +128,6 @@
      pointer-events: auto;
  }
 
- .particles,
- .fish-container {
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     top: 0;
-     left: 0;
-     overflow: hidden;
-     pointer-events: none;
- }
-
  .particle {
      position: absolute;
      font-size: 1.2em;
@@ -165,6 +136,7 @@
      animation: floatUp linear infinite;
      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
      white-space: nowrap;
+     z-index: -1;
  }
 
  @keyframes floatUp {
@@ -213,23 +185,16 @@
 
  section {
      height: 100%;
-
      background-color: transparent;
      color: #fff;
      opacity: 0;
      transform: translateY(20px);
      transition: opacity 1s ease-out, transform 1s ease-out;
-
      display: flex;
      justify-content: center;
      flex-direction: column;
-
      align-items: center;
      text-align: center;
- }
-
- html {
-     scroll-behavior: smooth;
  }
 
  .fish-container,
@@ -239,7 +204,7 @@
      height: 100%;
      top: 0;
      left: 0;
-     z-index: -1;
+     z-index: 0;
      pointer-events: none;
      overflow: hidden;
  }
@@ -251,7 +216,6 @@
      position: relative;
      z-index: 2;
  }
-
 
  section.visible {
      opacity: 1;
@@ -339,7 +303,6 @@
 
  .details-grid {
      font-size: clamp(0.8em, 1.2vw, 1.2em);
-
      display: grid;
      grid-template-columns: 1fr 2fr;
      gap: 5px 15px;
@@ -350,7 +313,6 @@
      margin-right: auto;
      text-align: left;
      white-space: nowrap;
-
      left: 50%;
      transform: translateX(5%);
  }
@@ -359,17 +321,14 @@
      left: 50%;
      transform: translateX(5%);
      font-size: clamp(0.8em, 1.2vw, 1.2em);
-
      display: grid;
      margin: 0 auto;
-
      gap: 5px 30px;
      grid-template-columns: 1fr 1fr;
      margin-left: auto;
      margin-right: auto;
      text-align: left;
      white-space: nowrap;
-
      justify-items: center;
      max-width: 600px;
  }
@@ -380,7 +339,6 @@
      margin: 5px 0;
      white-space: nowrap;
  }
-
 
  #countdown-container {
      text-align: center;
@@ -393,8 +351,6 @@
      font-size: clamp(2em, 6vw, 7em);
      color: #00bfff;
      animation: glowblue 3s infinite alternate;
-
-     background-color: rgba(0, 0, 0, 0);
      display: inline-block;
      padding: 10px 20px;
      border-radius: 10px;
@@ -404,7 +360,6 @@
  #fun {
      color: #ffffff;
      font-size: clamp(0.8em, 3vw, 3em);
-
      animation: glowwhite 3s infinite alternate;
  }
 
@@ -420,47 +375,34 @@
      width: 100%;
      height: 12%;
      transition: all 0.7s ease;
-
-
  }
 
  .menu-container.show {
-     /* background: linear-gradient(180deg, #ffffff89, #ffffff2d, #ffffff00); */
      background-color: #000;
      background: linear-gradient(180deg, #00000089, #ffffff00);
-
  }
-
-
 
  .menu-button {
      position: absolute;
      left: 50%;
      top: 10px;
      transform: translateX(-50%);
-
      opacity: 0;
-     visibility: hidden;
      background-color: transparent;
      border: none;
      color: #1997c2;
-
      padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
      font-size: clamp(1em, 1.2vw, 1.5em);
-     width: auto;
      white-space: nowrap;
-
      margin: 0;
      transition: all 0.3s ease;
  }
 
  .menu-button.show {
      opacity: 1;
-     visibility: visible;
      transition: transform 0.5s ease, opacity 0.5s ease;
      pointer-events: all;
  }
-
 
  #button-2.show {
      transform: translateX(clamp(-60vw, -38vw, -45vw));
@@ -501,9 +443,8 @@
      position: fixed;
      bottom: clamp(10px, 5%, 20px);
      right: clamp(10px, 5%, 20px);
-     z-index: 1009;
-
      padding: clamp(5px, 1vw, 7px) clamp(5px, 1vw, 7px);
+     z-index: 1009;
      background-color: transparent;
      color: #fff;
      border: 2px solid #00bfff;
@@ -522,14 +463,11 @@
      top: 10px;
      left: 50%;
      transform: translateX(-50%);
-
      z-index: 1009;
-
      background-color: transparent;
      color: white;
      border: none;
      cursor: pointer;
-
      padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
      font-size: clamp(1em, 1.2vw, 1.5em);
      width: clamp(50%, 70%, 300p x);
