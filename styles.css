@@ -111,6 +111,10 @@
      box-shadow: 0 0 20px #00bfff;
  }
 
+ .btn:active, #reveal-button.show:active {
+    transform: translateY(2rem);
+ }
+
  #reveal-button {
      opacity: 0;
      transform: translateY(20px);
