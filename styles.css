@@ -445,10 +445,6 @@
         font-size: 0.3em;
     }
 
-    /* .countdown {
-        font-size: clamp(1.2em, 6vw, 7em);
-    } */
-
     .header h2 {
         font-size: clamp(2.4em, 2.8vw, 3em);
     }
