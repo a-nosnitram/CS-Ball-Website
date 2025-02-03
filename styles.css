@@ -12,7 +12,7 @@
      overflow-x: hidden;
  }
 
- .header  {
+ .header {
      height: 100vh;
      display: flex;
      flex-direction: column;
@@ -111,8 +111,9 @@
      box-shadow: 0 0 20px #00bfff;
  }
 
- .btn:active, #reveal-button.show:active {
-    transform: translateY(2rem);
+ .btn:active,
+ #reveal-button.show:active {
+     transform: translateY(2rem);
  }
 
  #reveal-button {
@@ -407,7 +408,7 @@
      pointer-events: all;
  }
 
- #button-2.show {
+ /* #button-2.show {
      transform: translateX(clamp(-60vw, -38vw, -45vw));
  }
 
@@ -421,43 +422,55 @@
 
  #button-5.show {
      transform: translateX(clamp(20vw, 35vw, 50vw));
+ } */
+
+ #button-5.show {
+     transform: translateX(clamp(10vw, 20vw, 25vw));
+     /* transform: translateX(25vw) */
+
+ }
+
+ #button-2.show {
+     transform: translateX(clamp(-30vw, -35vw, -40vw));
  }
 
  @media (max-width: 768px) {
 
-    .details-grid, .prog-grid {
-        font-size: clamp(0.6em, 0.8vw, 1em);
-    }
+     .details-grid,
+     .prog-grid {
+         font-size: clamp(0.6em, 0.8vw, 1em);
+     }
 
-    #rsvp p {
-        font-size: clamp(0.8em, 1vw, 1em);
-    }
+     #rsvp p {
+         font-size: clamp(0.8em, 1vw, 1em);
+     }
 
-    .btn, #reveal-button {
-        font-size: clamp(0.8em, 1vw, 1em);
-    }
+     .btn,
+     #reveal-button {
+         font-size: clamp(0.8em, 1vw, 1em);
+     }
 
-    .menu-button {
-        font-size: clamp(0.7em, 0.9vw, 1.1em);
-    }
+     .menu-button {
+         font-size: clamp(0.7em, 0.9vw, 1.1em);
+     }
 
-    #navigate-to {
-        font-size: 0.3em;
-    }
+     #navigate-to {
+         font-size: 0.3em;
+     }
 
-    .header h2 {
-        font-size: clamp(2.4em, 2.8vw, 3em);
-    }
+     .header h2 {
+         font-size: clamp(2.4em, 2.8vw, 3em);
+     }
 
-    .header h1 {
-        font-size: clamp(1.2em, 1.4vw, 1.6em);
-    }
+     .header h1 {
+         font-size: clamp(1.2em, 1.4vw, 1.6em);
+     }
 
-    .header h3 {
-        font-size: clamp(0.8em, 1vw, 1.2em);
-    }
+     .header h3 {
+         font-size: clamp(0.8em, 1vw, 1.2em);
+     }
 
-     #button-2.show {
+     /* #button-2.show {
         transform: translateX(clamp(-48vw, -52vw, -54vw));
     }
 
@@ -471,6 +484,15 @@
 
      #button-5.show {
          transform: translateX(clamp(24vw, 29vw, 32vw));
+     } */
+
+
+     #button-5.show {
+         transform: translateX(clamp(10vw, 20vw, 25vw));
+     }
+
+     #button-2.show {
+         transform: translateX(clamp(-35vw, -40vw, -45vw));
      }
  }
 
