@@ -496,14 +496,14 @@
     position: fixed;
     bottom: clamp(10px, 5%, 20px);
     right: clamp(10px, 5%, 20px);
-    width: clamp(30px, 5vw, 50px);  /* Ensuring a square shape */
-    height: clamp(30px, 5vw, 50px); /* Ensuring a square shape */
+    width: clamp(30px, 5vw, 50px);
+    height: clamp(30px, 5vw, 50px);
     z-index: 1009;
     background-color: transparent;
     color: #fff;
     border: 2px solid #00bfff;
     transition: all 0.4s ease;
-    border-radius: 50%;  /* This ensures the button stays round */
+    border-radius: 50%;
     font-size: 1em;
     text-align: center;
     cursor: pointer;
