@@ -12,7 +12,7 @@
      overflow-x: hidden;
  }
 
- .header  {
+ .header {
      height: 100vh;
      display: flex;
      flex-direction: column;
@@ -111,8 +111,9 @@
      box-shadow: 0 0 20px #00bfff;
  }
 
- .btn:active, #reveal-button.show:active {
-    transform: translateY(2rem);
+ .btn:active,
+ #reveal-button.show:active {
+     transform: translateY(2rem);
  }
 
  #reveal-button {
@@ -407,7 +408,7 @@
      pointer-events: all;
  }
 
- #button-2.show {
+ /* #button-2.show {
      transform: translateX(clamp(-60vw, -38vw, -45vw));
  }
 
@@ -421,43 +422,51 @@
 
  #button-5.show {
      transform: translateX(clamp(20vw, 35vw, 50vw));
+ } */
+
+ #button-5.show {
+     transform: translateX(clamp(10vw, 20vw, 25vw));
+     /* transform: translateX(25vw) */
+
+ }
+
+ #button-2.show {
+     transform: translateX(clamp(-30vw, -35vw, -40vw));
  }
 
  @media (max-width: 768px) {
 
-    .details-grid, .prog-grid {
-        font-size: clamp(0.6em, 0.8vw, 1em);
-    }
+     .details-grid,
+     .prog-grid {
+         font-size: clamp(0.6em, 0.8vw, 1em);
+     }
 
-    #rsvp p {
-        font-size: clamp(0.8em, 1vw, 1em);
-    }
+     #rsvp p {
+         font-size: clamp(0.8em, 1vw, 1em);
+     }
 
-    .btn, #reveal-button {
-        font-size: clamp(0.8em, 1vw, 1em);
-    }
+     .btn,
+     #reveal-button {
+         font-size: clamp(0.8em, 1vw, 1em);
+     }
 
-    .menu-button {
-        font-size: clamp(0.7em, 0.9vw, 1.1em);
-    }
+     .menu-button, #navigate-to {
+         font-size: clamp(0.7em, 0.9vw, 1.1em);
+     }
 
-    #navigate-to {
-        font-size: 0.3em;
-    }
+     .header h2 {
+         font-size: clamp(2.4em, 2.8vw, 3em);
+     }
 
-    .header h2 {
-        font-size: clamp(2.4em, 2.8vw, 3em);
-    }
+     .header h1 {
+         font-size: clamp(1.2em, 1.4vw, 1.6em);
+     }
 
-    .header h1 {
-        font-size: clamp(1.2em, 1.4vw, 1.6em);
-    }
+     .header h3 {
+         font-size: clamp(0.8em, 1vw, 1.2em);
+     }
 
-    .header h3 {
-        font-size: clamp(0.8em, 1vw, 1.2em);
-    }
-
-     #button-2.show {
+     /* #button-2.show {
         transform: translateX(clamp(-48vw, -52vw, -54vw));
     }
 
@@ -471,27 +480,39 @@
 
      #button-5.show {
          transform: translateX(clamp(24vw, 29vw, 32vw));
+     } */
+
+
+     #button-5.show {
+         transform: translateX(clamp(10vw, 20vw, 25vw));
+     }
+
+     #button-2.show {
+         transform: translateX(clamp(-35vw, -40vw, -45vw));
      }
  }
 
  .top-button {
-     position: fixed;
-     bottom: clamp(10px, 5%, 20px);
-     right: clamp(10px, 5%, 20px);
-     padding: clamp(5px, 1vw, 7px) clamp(5px, 1vw, 7px);
-     z-index: 1009;
-     background-color: transparent;
-     color: #fff;
-     border: 2px solid #00bfff;
-     transition: all 0.4s ease;
-     border-radius: 30px;
-     font-size: 1em;
-     width: 2.5em;
-     text-align: center;
-     cursor: pointer;
-     pointer-events: none;
-     opacity: 0;
- }
+    position: fixed;
+    bottom: clamp(10px, 5%, 20px);
+    right: clamp(10px, 5%, 20px);
+    width: clamp(30px, 5vw, 50px);
+    height: clamp(30px, 5vw, 50px);
+    z-index: 1009;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #00bfff;
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
  #navigate-to {
      position: absolute;
@@ -504,7 +525,6 @@
      border: none;
      cursor: pointer;
      padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
-     font-size: clamp(0.7em, 1.2vw, 1.5em);
      width: clamp(50%, 70%, 300p x);
  }
 
