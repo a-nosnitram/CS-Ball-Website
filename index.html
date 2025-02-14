@@ -52,31 +52,27 @@
                 <p><i class="fa-solid fa-star"></i> Theme:</p>
             </div>
             <div class="details-info">
-                <p>
-                    <div class="btn-container">
-                        <p>April 5, 2025
-                            <button class="cal-btn" onclick="addToGoogleCalendar('CS BALL!', '2025-04-06T18:30:00')"><img
-                                    src="resources/Google_Calendar-Logo.png" alt="Google
-                            Calendar"></button>
-                            <button class="cal-btn" onclick="downloadICS('CS BALL!', '2025-04-06T18:30:00')"><img
-                                    src="resources/Apple_Calendar.png" alt="Apple
-                            Calendar"></button>
-                        </p>
-                    </div>
-                </p>
+                <p id="drop-date">April 5, 2025</p>
                 <p>
                     <a href="https://maps.app.goo.gl/oD7j5ysKH1FGK37L9" target="_blank" rel="noopener noreferrer">
-                        Upper and Lower College Hall
+                        Upper & Lower College Hall
                     </a>
+                </p>
                 </p>
                 <p>Black tie</p>
                 <p>Under the C
                 </p>
             </div>
         </div>
+        <div class="btn-container-center">
+            <p>Add to:
+            <button class="cal-btn" onclick="addToGoogleCalendar('CS BALL!', '2025-04-06T18:30:00')"><img
+                src="resources/Google_Calendar-Logo.png" alt="Google Calendar"></button>
+            <button class="cal-btn" onclick="downloadICS('CS BALL!', '2025-04-06T18:30:00')"><img
+                src="resources/Apple_Calendar.png" alt="Apple Calendar"></button> </p>
+        </div>
         <!-- <a href="#timer"><button class="btn"> How long shell I wait? </button></a> -->
         <a href="#rsvp"><button class="btn" id="t-button"> When the tickets dropping ? </button></a>
-
         <!-- <a href="#Programme"><button class="btn">View Schedule</button></a> -->
     </section>
 
@@ -100,15 +96,16 @@
             </div>
         </div>
         <a href="#rsvp"><button class="btn">Tickets</button></a>
-
     </section> -->
+
     <section id="rsvp">
         <div class="carousel">
             <div class="carousel-container">
                 <div class="carousel-slide">
-                    <h2>Early Bird</h2>
+                    <h2>Early Bird Dinner</h2>
                     <p>The first ticket drop will be on <span id="drop-date">February 19th</span> at <span
-                            id="drop-date">12:00pm</span>. Early Bird Tickets will be priced at <span
+                            id="drop-date">12:00pm</span>.</p>
+                    <p id="dinner">Early Bird Tickets will be priced at <span
                             id="drop-date">£40.50</span>.</p>
                     <p></p>
 
@@ -130,9 +127,9 @@
 
                 <div class="carousel-slide">
                     <h2>Dinner & After-Party</h2>
-                    <p>Standard dinner ticket drop will be on <span id="drop-date">February 26th</span> at <span
-                            id="drop-date">12:00pm</span>. Dinner Tickets: <span id="drop-date">£45.50</span>.
-                        After-Party Tickets: <span id="drop-date">£20.50</span></p>
+                    <p>Standard ticket drop will be on <span id="drop-date">February 26th</span> at <span id="drop-date">12:00pm</span>.
+                        <p id="dinner">Dinner Tickets: <span id="drop-date">£45.50</span>.</p>
+                        <p>After-Party Tickets: <span id="drop-date">£20.50</span></p>
                     <p></p>
 
                     <p>

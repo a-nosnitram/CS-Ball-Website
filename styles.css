@@ -130,15 +130,16 @@
 
  .btn {
      margin-top: 30px;
-     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+     /* padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px); */
      background-color: transparent;
      color: #fff;
      border: 2px solid #00bfff;
      cursor: pointer;
      transition: all 0.4s ease;
      border-radius: 30px;
-     font-size: clamp(1.5em, 2vw, 2em);
-     width: clamp(50%, 70%, 300p x);
+     /* font-size: clamp(1.5em, 2vw, 2em); */
+     /* font-size: 1em; */
+     /* width: clamp(50%, 70%, 300p x); */
  }
 
  .btn:hover,
@@ -176,6 +177,12 @@
      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
      white-space: nowrap;
      z-index: -1;
+ }
+
+ @media screen and (max-width: 768px) {
+     .particle {
+         font-size: 0.9em;
+     }
  }
 
  @keyframes floatUp {
@@ -328,12 +335,6 @@
 
  section a:hover {
      color: #00bfff;
- }
-
- #smaller-text {
-     font-size: clamp(0.8em, 1vw, 1em);
-     color: #ffffff91;
-     white-space: wrap;
  }
 
  .details-grid {
@@ -498,7 +499,7 @@
      .cal-btn img {
          /* width: clamp(0.6m, 0.8vw, 1em);
          height: clamp(0.6em, 0.8vw, 1em); */
-         width: 1px;
+         width: clamp(0.6em, 0.8vw, 1em);
      }
 
      .details-grid,
@@ -561,14 +562,6 @@
          transform: translateX(clamp(-35vw, -42vw, -45vw));
      }
 
-
-     #t-button,
-     #reveal-button {
-         padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
-
-         font-size: clamp(0.6em, 0.8vw, 1em);
-         width: clamp(50%, 70%, 200p x);
-     }
  }
 
  .top-button {
@@ -640,10 +633,14 @@
      min-width: 100%;
      box-sizing: border-box;
      text-align: center;
-     padding-left: 20em 0;
-     padding-left: 20em 0;
+     padding-left: clamp(5em, 19vw, 20em);
+     padding-right: clamp(5em, 19vw, 20em);
  }
 
+ .carousel-slide p {
+     margin-left: 40em 0;
+     margin-right: 40em 0;
+ }
 
  .carousel-slide h2 {
      font-size: clamp(1.2rem, 2vw, 2.5rem);
@@ -724,14 +721,32 @@
  }
 
  .cal-btn:hover img {
-     transform: scale(1);
+     transform: scale(1.1);
  }
 
+ @media (max-width: 768px) {
+    #t-button,
+    #reveal-button {
+        padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+        font-size: clamp(0.6em, 0.8vw, 1em);
+        width: clamp(40%, 50%, 100p x);
+    }
+    /* why doesn't this work ??????? AAAAAA */
+
+
+    .carousel-slide {
+        padding-left: clamp(0.5em, 3vw, 5em);
+        padding-right: clamp(0.5em, 3vw, 5em);
+    }
+ }
 
  #t-button,
  #reveal-button {
      padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+     font-size: clamp(0.8em, 1vw, 1em);
+     width: clamp(40%, 50%, 100p x);
+ }
 
-     font-size: clamp(1rem, 1vw, 1rem);
-     width: clamp(50%, 70%, 300p x);
+ #dinner {
+    margin-top: 20px;
  }

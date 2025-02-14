@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fish.style.opacity = 1 - fish.style.top.replace('%', '') / 100 + 0.1;
         fish.style.animationDuration = `${Math.random() * 10 + 8}s`;
 
-        const fishSize = Math.random() * 0.7 + 0.5;
+        const isMobile = window.innerWidth < 768; // Detect mobile devices
+        const fishSize = isMobile ? Math.random() * 0.5 + 0.25 : Math.random() * 0.7 + 0.5; // Smaller fish on mobile
         const fishcolor = Math.random();
 
         fish.style.fontSize = `${fishSize}em`;
