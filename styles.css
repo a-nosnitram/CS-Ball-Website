@@ -103,14 +103,14 @@
  @keyframes glowpink {
      from {
          text-shadow:
-             0 0 0.1em #bc1effaa,
-             0 0 0.2em #e51eff88;
+             0 0 0.1em #ec1effaa,
+             0 0 0.2em #ff1ee588;
      }
 
      to {
          text-shadow:
-             0 0 0.3em #a019c2e6,
-             0 0 0.6em #bc19c2cc;
+             0 0 0.3em #c219c2e6,
+             0 0 0.6em #c219accc;
      }
  }
 
@@ -330,7 +330,7 @@
  #drop-date {
      font-weight: bolder;
      animation: glowpink 3s infinite alternate;
-     color: #c653f7;
+     color: #e47bf6;
  }
 
  section a:hover {
@@ -491,9 +491,9 @@
  @media (max-width: 768px) {
 
      #reveal-text {
-         font-size: clamp(0.6em, 0.8vw, 0.9em);
-         margin-left: 10px;
-         margin-right: 10px;
+         font-size: clamp(0.7em, 0.9vw, 1em);
+         margin-left: 2em;
+         margin-right: 2em;
      }
 
      .cal-btn img {
@@ -526,11 +526,11 @@
      }
 
      .header h2 {
-         font-size: clamp(2.4em, 2.8vw, 3em);
+         font-size: clamp(2.8em, 3vw, 3.5em);
      }
 
      .header h1 {
-         font-size: clamp(1.2em, 1.4vw, 1.6em);
+         font-size: clamp(1.4em, 1.6vw, 1.8em);
      }
 
      .header h3 {
