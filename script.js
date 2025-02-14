@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         particle.textContent = Math.random() < 0.5 ? '0' : '1';
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        particle.style.opacity = Math.random();
+        particle.style.opacity = 0.1;
+        particle.style.color = '#1e56ff';
         particlesContainer.appendChild(particle);
     }
 
@@ -27,12 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         fish.style.animationDuration = `${Math.random() * 10 + 8}s`;
 
         const fishSize = Math.random() * 0.7 + 0.5;
+        const fishcolor = Math.random();
+
         fish.style.fontSize = `${fishSize}em`;
 
         if (fishSize < 0.8) {
-            fish.style.color = '#1e8fff97'; // darker colour for smaller fish
+            if (fishcolor < 0.5) {
+                fish.style.color = '#1e8fff97';  // darker colour for smaller fish
+            } else {
+                fish.style.color = '#871eff97';
+            }
         } else {
-            fish.style.color = '#1e90ff'; // brighter colour for larger fish
+            if (fishcolor > 0.5) {
+                fish.style.color = '#1e90ff'; // brighter colour for larger fish
+            } else {
+                fish.style.color = '#b41eff';
+            }
         }
 
         // swimming directions
@@ -45,6 +56,50 @@ document.addEventListener('DOMContentLoaded', () => {
         fishContainer.appendChild(fish);
     }
 });
+
+// add to google calendar
+function addToGoogleCalendar(eventTitle, date) {
+    const startDate = new Date(date);
+    const endDate = new Date(startDate);
+    endDate.setHours(startDate.getHours() + 1);
+
+    const startISO = startDate.toISOString().replace(/-|:|\.\d+/g, "");
+    const endISO = endDate.toISOString().replace(/-|:|\.\d+/g, "");
+
+    const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startISO}/${endISO}&details=Ticket%20Drop%20Event&location=&sf=true&output=xml`;
+
+    window.open(googleCalendarURL, "_blank");
+}
+
+// save ics file
+function downloadICS(eventTitle, date) {
+    const startDate = new Date(date); // Set time to 12:00 PM
+    const endDate = new Date(startDate);
+    endDate.setHours(startDate.getHours() + 1); // 1-hour event
+
+    const formatDate = (date) => {
+        return date.toISOString().replace(/-|:|\.\d+/g, "").slice(0, 15) + "Z";
+    };
+
+    const icsContent = `BEGIN:VCALENDAR
+    VERSION:2.0
+    BEGIN:VEVENT
+    DTSTART:${formatDate(startDate)}
+    DTEND:${formatDate(endDate)}
+    SUMMARY:${eventTitle}
+    DESCRIPTION:Ticket Drop Event
+    LOCATION:
+    END:VEVENT
+    END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: "text/calendar" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${eventTitle.replace(/\s/g, "_")}.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
 // smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -123,6 +178,8 @@ window.addEventListener('DOMContentLoaded', typeWriter);
 
 // Set the date of the Computer Science Ball
 const eventDate = new Date("April 5, 2025 19:00:00").getTime(); // Set the event time (7 PM)
+const birdDate = new Date("February 19, 2025 12:00:00").getTime();
+const regDate = new Date("February 26, 2025 12:00:00").getTime();
 
 // Update the countdown every second
 const countdownTimer = setInterval(function () {
@@ -144,6 +201,44 @@ const countdownTimer = setInterval(function () {
     }
 }, 1000);
 
+const countdownTimerBird = setInterval(function () {
+    const now = new Date().getTime();
+    const timeLeft = birdDate - now;
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.querySelector(".countdown-bird").textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (timeLeft < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown-bird").textContent = "The Tickets Have O-Fish-ally Dropped!";
+    }
+}, 1000);
+
+const countdownTimerReg = setInterval(function () {
+    const now = new Date().getTime();
+    const timeLeft = regDate - now;
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.querySelector(".countdown-reg").textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (timeLeft < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown-reg").textContent = "The Tickets Have O-Fish-ally Dropped!";
+    }
+}, 1000);
+
 // MENU
 document.addEventListener('DOMContentLoaded', () => {
     const navigateButton = document.getElementById('navigate-to');
@@ -157,3 +252,30 @@ document.addEventListener('DOMContentLoaded', () => {
         menuContainer.classList.toggle('show');
     });
 });
+
+// carousel for ticketdrop
+
+let currentIndex = 0;
+
+function updateCarousel() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const container = document.querySelector('.carousel-container');
+
+    // Ensure index is within bounds
+    if (currentIndex < 0) currentIndex = slides.length - 1;
+    if (currentIndex >= slides.length) currentIndex = 0;
+
+    // Move container
+    const offset = -currentIndex * 100;
+    container.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    currentIndex++;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentIndex--;
+    updateCarousel();
+}

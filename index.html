@@ -26,9 +26,9 @@
     <button class="navigate-button" id="navigate-to">Menu</button>
     <div id="menu" class="menu-container">
         <a href="#details"><button class="menu-button" id="button-2" data-section="details">Details</button></a>
-        <!-- <a href="#Programme"><button class="menu-button" id="button-4" data-section="Programme">Agenda</button></a>
-        <a href="#rsvp"><button class="menu-button" id="button-3" data-section="rsvp">Tickets</button></a> -->
-        <a href="#timer"><button class="menu-button" id="button-5" data-section="timer">Timer</button></a>
+        <!-- <a href="#Programme"><button class="menu-button" id="button-4" data-section="Programme">Agenda</button></a> -->
+        <a href="#rsvp"><button class="menu-button" id="button-5" data-section="rsvp">Tickets</button></a>
+        <!-- <a href="#timer"><button class="menu-button" id="button-5" data-section="timer">Timer</button></a> -->
     </div>
 
     <section id="top">
@@ -51,9 +51,19 @@
                 <p><i class="fa-solid fa-user-tie"></i> Dress Code:</p>
                 <p><i class="fa-solid fa-star"></i> Theme:</p>
             </div>
-
             <div class="details-info">
-                <p>April 5, 2025</p>
+                <p>
+                    <div class="btn-container">
+                        <p>April 5, 2025
+                            <button class="cal-btn" onclick="addToGoogleCalendar('CS BALL!', '2025-04-06T18:30:00')"><img
+                                    src="resources/Google_Calendar-Logo.png" alt="Google
+                            Calendar"></button>
+                            <button class="cal-btn" onclick="downloadICS('CS BALL!', '2025-04-06T18:30:00')"><img
+                                    src="resources/Apple_Calendar.png" alt="Apple
+                            Calendar"></button>
+                        </p>
+                    </div>
+                </p>
                 <p>
                     <a href="https://maps.app.goo.gl/oD7j5ysKH1FGK37L9" target="_blank" rel="noopener noreferrer">
                         Upper and Lower College Hall
@@ -61,11 +71,11 @@
                 </p>
                 <p>Black tie</p>
                 <p>Under the C
-                    <span id="smaller-text">(In case you failed to C the big ass pun I put up there)</span>
                 </p>
             </div>
         </div>
-        <a href="#timer"><button class="btn"> How long shell I wait? </button></a>
+        <!-- <a href="#timer"><button class="btn"> How long shell I wait? </button></a> -->
+        <a href="#rsvp"><button class="btn" id="t-button"> When the tickets dropping ? </button></a>
 
         <!-- <a href="#Programme"><button class="btn">View Schedule</button></a> -->
     </section>
@@ -91,24 +101,83 @@
         </div>
         <a href="#rsvp"><button class="btn">Tickets</button></a>
 
+    </section> -->
+    <section id="rsvp">
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <h2>Early Bird</h2>
+                    <p>The first ticket drop will be on <span id="drop-date">February 19th</span> at <span
+                            id="drop-date">12:00pm</span>. Early Bird Tickets will be priced at <span
+                            id="drop-date">£40.50</span>.</p>
+                    <p></p>
+
+                    <div class="btn-container-center">
+                        <p id="add">Add to:
+                            <button class="cal-btn"
+                                onclick="addToGoogleCalendar('CS BALL Early Bird Ticket Drop!', '2025-02-19T12:00:00')"><img
+                                    src="resources/Google_Calendar-Logo.png" alt="Google
+                            Calendar"></button>
+                            <button class="cal-btn"
+                                onclick="downloadICS('CS BALL Early Bird Ticket Drop!', '2025-02-19T12:00:00')"><img
+                                    src="resources/Apple_Calendar.png" alt="Apple
+                            Calendar"></button>
+                        </p>
+                    </div>
+                    <p></p>
+                    <div class="countdown-bird"></div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h2>Dinner & After-Party</h2>
+                    <p>Standard dinner ticket drop will be on <span id="drop-date">February 26th</span> at <span
+                            id="drop-date">12:00pm</span>. Dinner Tickets: <span id="drop-date">£45.50</span>.
+                        After-Party Tickets: <span id="drop-date">£20.50</span></p>
+                    <p></p>
+
+                    <p>
+                    <div class="btn-container-center">
+                        <p>Add to:
+                            <button class="cal-btn"
+                                onclick="addToGoogleCalendar('CS BALL Dinner and After-Party Ticket Drop!', '2025-02-26T12:00:00')"><img
+                                    src="resources/Google_Calendar-Logo.png" alt="Google
+                            Calendar"></button>
+                            <button class="cal-btn"
+                                onclick="downloadICS('CS BALL Dinner and After-Party Ticket Drop!', '2025-02-26T12:00:00')"><img
+                                    src="resources/Apple_Calendar.png" alt="Apple
+                            Calendar"></button>
+                        </p>
+                    </div>
+                    </p>
+                    <p></p>
+                    <div class="countdown-reg"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+        </div>
     </section>
 
-    <section id="rsvp">
-        <h2>First Drop</h2>
-        <p>The first ticket drop will be on the [INSERT DATE].</p>
-        <p>Early Bird Tickets will be priced at [INSERT PRICE].</p> -->
-        <!-- <a href="https://www.yourunion.net/"> <button class="btn">Buy ticket</button></a> -->
-        <!-- <a href="#timer"><button class="btn"> How long shell I wait? </button></a> -->
-    <!-- </section>  -->
+    <!--
+        <h3> All Dinner Tickets Include </h3>
+        <p> + A three-course meal</p>
+        <p> + Half a bottle of wine</p>
+        <p> + Access to the after-party</p>
+        <h3>  </h3> -->
 
-    <section id="timer">
+    <!-- <a href="https://www.yourunion.net/"> <button class="btn">Buy ticket</button></a> -->
+    <!-- <a href="#timer"><button class="btn"> How long shell I wait? </button></a> -->
+
+    <!-- <section id="timer">
         <div id="countdown-container">
             <p id="countdown"></p>
             <p id="fun">...until a boat load of fun...</p>
             <p id="fun">^(;,;)^</p>
             <a href="#top"><button class="btn"> Back to the top </button></a>
         </div>
-    </section>
+    </section> -->
 
     <script src="script.js"></script>
 

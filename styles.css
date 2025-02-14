@@ -8,8 +8,33 @@
  body,
  html {
      height: 100%;
-     background: linear-gradient(180deg, #0d0d1a, #000);
+     background: linear-gradient(180deg, #5c1570, #100e49, rgb(9, 23, 48), #000);
+     background-size: 200% 200%;
      overflow-x: hidden;
+     animation: waveShift 30s infinite alternate ease-in-out;
+
+ }
+
+ @keyframes waveShift {
+     0% {
+         background-position: 0% 0%;
+     }
+
+     25% {
+         background-position: 25% 50%;
+     }
+
+     50% {
+         background-position: 50% 25%;
+     }
+
+     75% {
+         background-position: 75% 75%;
+     }
+
+     100% {
+         background-position: 100% 50%;
+     }
  }
 
  .header {
@@ -75,6 +100,20 @@
      }
  }
 
+ @keyframes glowpink {
+     from {
+         text-shadow:
+             0 0 0.1em #bc1effaa,
+             0 0 0.2em #e51eff88;
+     }
+
+     to {
+         text-shadow:
+             0 0 0.3em #a019c2e6,
+             0 0 0.6em #bc19c2cc;
+     }
+ }
+
  @keyframes glowwhite {
      from {
          text-shadow:
@@ -95,7 +134,6 @@
      background-color: transparent;
      color: #fff;
      border: 2px solid #00bfff;
-     font-size: 1em;
      cursor: pointer;
      transition: all 0.4s ease;
      border-radius: 30px;
@@ -121,8 +159,6 @@
      transform: translateY(20px);
      transition: opacity 0.8s ease, transform 0.8s ease;
      pointer-events: none;
-     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
-     font-size: clamp(1.5em, 2vw, 2em);
  }
 
  #reveal-button.show,
@@ -136,8 +172,6 @@
  .particle {
      position: absolute;
      font-size: 1.2em;
-     color: #2c5563;
-     opacity: 0.8;
      animation: floatUp linear infinite;
      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
      white-space: nowrap;
@@ -152,7 +186,7 @@
 
      to {
          transform: translateY(-10vh);
-         opacity: 1;
+         opacity: 0.4;
      }
  }
 
@@ -264,15 +298,6 @@
      }
  }
 
- section p {
-     margin-top: 5px;
-     margin-bottom: 5px;
- }
-
- #rsvp p {
-     font-size: clamp(1em, 1.2vw, 2em);
- }
-
  section a {
      color: #ffffff;
  }
@@ -284,7 +309,7 @@
      margin-bottom: 10px;
      font-family: OCR A Std, monospace;
      animation: glowwhite 3s infinite alternate;
-     white-space: nowrap;
+     white-space: wrap;
  }
 
  #rsvp,
@@ -293,6 +318,12 @@
  #timer {
      margin-left: 6vw;
      margin-right: 6vw;
+ }
+
+ #drop-date {
+     font-weight: bolder;
+     animation: glowpink 3s infinite alternate;
+     color: #c653f7;
  }
 
  section a:hover {
@@ -306,12 +337,12 @@
  }
 
  .details-grid {
-     font-size: clamp(0.8em, 1.2vw, 1.2em);
+     font-size: clamp(0.6rem, 1vw, 1.4rem);
      display: grid;
+     margin-left: 0px;
      grid-template-columns: 1fr 2fr;
-     gap: 5px 15px;
+     gap: 20em clamp(0rem, 5vw, 50rem);
      align-items: start;
-     margin-bottom: 20px;
      max-width: 600px;
      margin-left: auto;
      margin-right: auto;
@@ -321,13 +352,20 @@
      transform: translateX(5%);
  }
 
+ /* .tickets-grid {
+    text-align: center;
+    font-size: clamp(0.8em, 1.5vw, 1.6em);
+     display: grid;
+     grid-template-columns: 1fr 2fr;
+     gap: 5px 15px;
+ } */
+
  .prog-grid {
      left: 50%;
      transform: translateX(5%);
-     font-size: clamp(0.8em, 1.2vw, 1.2em);
      display: grid;
      margin: 0 auto;
-     gap: 5px 30px;
+     gap: 0px clamp(5px, 50px, 50px);
      grid-template-columns: 1fr 1fr;
      margin-left: auto;
      margin-right: auto;
@@ -338,10 +376,12 @@
  }
 
  .details-labels p,
- .prog-labels p {
+ .prog-labels p,
+ .details-info p {
      font-weight: bold;
-     margin: 5px 0;
      white-space: nowrap;
+     font-size: clamp(1em, 1.4vw, 1.4em);
+
  }
 
  #countdown-container {
@@ -359,6 +399,19 @@
      padding: 10px 20px;
      border-radius: 10px;
      white-space: nowrap;
+ }
+
+ .countdown-bird,
+ .countdown-reg {
+     font-family: OCR A Std, monospace;
+     font-weight: bold;
+     color: #00bfff;
+     font-size: 10rem;
+     animation: glowblue 3s infinite alternate;
+     display: inline-block;
+     padding: 10px 20px;
+     white-space: nowrap;
+     font-size: clamp(1em, 3vw, 3em);
  }
 
  #fun {
@@ -436,21 +489,38 @@
 
  @media (max-width: 768px) {
 
+     #reveal-text {
+         font-size: clamp(0.6em, 0.8vw, 0.9em);
+         margin-left: 10px;
+         margin-right: 10px;
+     }
+
+     .cal-btn img {
+         /* width: clamp(0.6m, 0.8vw, 1em);
+         height: clamp(0.6em, 0.8vw, 1em); */
+         width: 1px;
+     }
+
      .details-grid,
      .prog-grid {
          font-size: clamp(0.6em, 0.8vw, 1em);
      }
 
      #rsvp p {
-         font-size: clamp(0.8em, 1vw, 1em);
+         /* font-size: clamp(0.8em, 1vw, 1em); */
+         margin-left: 40px;
+         margin-right: 40px;
+         font-size: clamp(0.7em, 0.9vw, 1em);
      }
 
-     .btn,
-     #reveal-button {
-         font-size: clamp(0.8em, 1vw, 1em);
+     #add {
+         margin-right: 0px;
+         margin-left: 0px;
+         padding: none;
      }
 
-     .menu-button, #navigate-to {
+     .menu-button,
+     #navigate-to {
          font-size: clamp(0.7em, 0.9vw, 1.1em);
      }
 
@@ -484,35 +554,44 @@
 
 
      #button-5.show {
-         transform: translateX(clamp(10vw, 20vw, 25vw));
+         transform: translateX(clamp(10vw, 16vw, 30vw));
      }
 
      #button-2.show {
-         transform: translateX(clamp(-35vw, -40vw, -45vw));
+         transform: translateX(clamp(-35vw, -42vw, -45vw));
+     }
+
+
+     #t-button,
+     #reveal-button {
+         padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+
+         font-size: clamp(0.6em, 0.8vw, 1em);
+         width: clamp(50%, 70%, 200p x);
      }
  }
 
  .top-button {
-    position: fixed;
-    bottom: clamp(10px, 5%, 20px);
-    right: clamp(10px, 5%, 20px);
-    width: clamp(30px, 5vw, 50px);
-    height: clamp(30px, 5vw, 50px);
-    z-index: 1009;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #00bfff;
-    transition: all 0.4s ease;
-    border-radius: 50%;
-    font-size: 1em;
-    text-align: center;
-    cursor: pointer;
-    pointer-events: none;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+     position: fixed;
+     bottom: clamp(10px, 5%, 20px);
+     right: clamp(10px, 5%, 20px);
+     width: clamp(30px, 5vw, 50px);
+     height: clamp(30px, 5vw, 50px);
+     z-index: 1009;
+     background-color: transparent;
+     color: #fff;
+     border: 2px solid #00bfff;
+     transition: all 0.4s ease;
+     border-radius: 50%;
+     font-size: 1em;
+     text-align: center;
+     cursor: pointer;
+     pointer-events: none;
+     opacity: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
 
  #navigate-to {
      position: absolute;
@@ -542,4 +621,117 @@
      .menu-button:hover {
          text-shadow: none;
      }
+ }
+
+ .carousel {
+     position: relative;
+     width: 100%;
+     max-width: 100vw;
+     margin: auto;
+     overflow: hidden;
+ }
+
+ .carousel-container {
+     display: flex;
+     transition: transform 0.5s ease-in-out;
+ }
+
+ .carousel-slide {
+     min-width: 100%;
+     box-sizing: border-box;
+     text-align: center;
+     padding-left: 20em 0;
+     padding-left: 20em 0;
+ }
+
+
+ .carousel-slide h2 {
+     font-size: clamp(1.2rem, 2vw, 2.5rem);
+     white-space: wrap;
+ }
+
+ .carousel-btn {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     cursor: pointer;
+     font-size: 24px;
+     border: none;
+     color: #fff;
+     opacity: 0.5;
+     background-color: transparent;
+ }
+
+ .carousel-slide h2 {
+     font-size: clamp(1.2rem, 2vw, 2.5rem);
+     white-space: wrap;
+ }
+
+ .carousel-btn:hover {
+     color: #00bfff;
+     text-shadow: 0 0 10px #00bfff;
+     opacity: 1;
+ }
+
+ .prev {
+     left: 0px;
+ }
+
+ .next {
+     right: 0px;
+ }
+
+ .btn-container {
+     display: flex;
+     align-items: center;
+     margin-bottom: 0px;
+     padding: none;
+     padding-bottom: 0%;
+     gap: 5px;
+ }
+
+
+ .btn-container-center {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 0px;
+     padding: none;
+     padding-bottom: 0%;
+     gap: 5px;
+     margin-top: 20px;
+ }
+
+ .btn-container-center p {
+     margin-right: 0px;
+     padding: none;
+ }
+
+ .cal-btn {
+     border: none;
+     background: none;
+     cursor: pointer;
+     margin-bottom: 0%;
+     padding-left: 5px;
+     padding-bottom: 0%;
+ }
+
+ .cal-btn img {
+     width: clamp(0.9rem, 1vw, 1rem);
+     height: clamp(0.9rem, 1vw, 1rem);
+     margin-bottom: 0px;
+     transition: transform 0.2s ease-in-out;
+ }
+
+ .cal-btn:hover img {
+     transform: scale(1);
+ }
+
+
+ #t-button,
+ #reveal-button {
+     padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+
+     font-size: clamp(1rem, 1vw, 1rem);
+     width: clamp(50%, 70%, 300p x);
  }
