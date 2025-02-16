@@ -564,26 +564,42 @@
 
  }
 
- .top-button {
+ .top-button,
+ .down-btn {
      position: fixed;
-     bottom: clamp(10px, 5%, 20px);
-     right: clamp(10px, 5%, 20px);
-     width: clamp(30px, 5vw, 50px);
-     height: clamp(30px, 5vw, 50px);
+
      z-index: 1009;
      background-color: transparent;
      color: #fff;
-     border: 2px solid #00bfff;
      transition: all 0.4s ease;
      border-radius: 50%;
      font-size: 1em;
      text-align: center;
      cursor: pointer;
-     pointer-events: none;
-     opacity: 0;
+
      display: flex;
      align-items: center;
      justify-content: center;
+ }
+
+ .down-btn {
+     left: 50%;
+     transform: translateX(-50%) rotate(90deg);
+     border: none;
+     font-size: 24px;
+
+
+ }
+
+ .top-button {
+     width: clamp(30px, 5vw, 50px);
+     height: clamp(30px, 5vw, 50px);
+     border: 2px solid #00bfff;
+
+     pointer-events: none;
+     opacity: 0;
+     bottom: clamp(10px, 5%, 20px);
+     right: clamp(10px, 5%, 20px);
  }
 
  #navigate-to {
@@ -664,7 +680,7 @@
      white-space: wrap;
  }
 
- .carousel-btn:hover {
+ .carousel-btn:hover, .down-btn:hover {
      color: #00bfff;
      text-shadow: 0 0 10px #00bfff;
      opacity: 1;
@@ -725,19 +741,21 @@
  }
 
  @media (max-width: 768px) {
-    #t-button,
-    #reveal-button {
-        padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
-        font-size: clamp(0.6em, 0.8vw, 1em);
-        width: clamp(40%, 50%, 100p x);
-    }
-    /* why doesn't this work ??????? AAAAAA */
+
+     #t-button,
+     #reveal-button {
+         padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
+         font-size: clamp(0.6em, 0.8vw, 1em);
+         width: clamp(40%, 50%, 100p x);
+     }
+
+     /* why doesn't this work ??????? AAAAAA */
 
 
-    .carousel-slide {
-        padding-left: clamp(0.5em, 3vw, 5em);
-        padding-right: clamp(0.5em, 3vw, 5em);
-    }
+     .carousel-slide {
+         padding-left: clamp(0.5em, 3vw, 5em);
+         padding-right: clamp(0.5em, 3vw, 5em);
+     }
  }
 
  #t-button,
@@ -748,5 +766,49 @@
  }
 
  #dinner {
-    margin-top: 20px;
+     margin-top: 20px;
+ }
+
+ ul {
+     text-align: left;
+     display: inline-block;
+     list-style-position: inside;
+     padding-left: 0;
+     list-style-type: none;
+ }
+
+ ul li::before {
+     content: "+ ";
+     /* You can use any Unicode character */
+     color: #00bfff;
+     animation: glowblue 3s infinite alternate;
+     font-size: 16px;
+     margin-right: 8px;
+ }
+
+ ul li {
+     color: #00bfff;
+     animation: glowblue 3s infinite alternate;
+ }
+
+ #ticket2 {
+     margin-left: clamp(12em, 10vw, 30em);
+     margin-right: clamp(12em, 10vw, 30em);
+ }
+
+ #ticket2 h2 {
+     animation: glowwhite 3s infinite alternate;
+ }
+
+ @media (max-width: 768px) {
+     #ticket2 {
+         margin-left: 20px;
+         margin-right: 20px;
+     }
+ }
+
+ #ticket2 p, #ticket2 li {
+     font-size: clamp(0.8em, 1vw, 1em);
+    /* font-size: clamp(0.7em, 0.9vw, 1em); */
+
  }
