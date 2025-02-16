@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // add to google calendar
-function addToGoogleCalendar(eventTitle, date) {
+function addToGoogleCalendar(eventTitle, date, venue) {
     const startDate = new Date(date);
     const endDate = new Date(startDate);
     endDate.setHours(startDate.getHours() + 1);
@@ -67,13 +67,13 @@ function addToGoogleCalendar(eventTitle, date) {
     const startISO = startDate.toISOString().replace(/-|:|\.\d+/g, "");
     const endISO = endDate.toISOString().replace(/-|:|\.\d+/g, "");
 
-    const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startISO}/${endISO}&details=Ticket%20Drop%20Event&location=&sf=true&output=xml`;
+    const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startISO}/${endISO}&details=Ticket%20Drop%20Event&location=${encodeURIComponent(venue)}&sf=true&output=xml`;
 
     window.open(googleCalendarURL, "_blank");
 }
 
 // save ics file
-function downloadICS(eventTitle, date) {
+function downloadICS(eventTitle, date, venue) {
     const startDate = new Date(date); // Set time to 12:00 PM
     const endDate = new Date(startDate);
     endDate.setHours(startDate.getHours() + 1); // 1-hour event
@@ -83,15 +83,15 @@ function downloadICS(eventTitle, date) {
     };
 
     const icsContent = `BEGIN:VCALENDAR
-    VERSION:2.0
-    BEGIN:VEVENT
-    DTSTART:${formatDate(startDate)}
-    DTEND:${formatDate(endDate)}
-    SUMMARY:${eventTitle}
-    DESCRIPTION:Ticket Drop Event
-    LOCATION:
-    END:VEVENT
-    END:VCALENDAR`;
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${formatDate(startDate)}
+DTEND:${formatDate(endDate)}
+SUMMARY:${eventTitle}
+DESCRIPTION:Ticket Drop Event
+LOCATION:${venue}
+END:VEVENT
+END:VCALENDAR`;
 
     const blob = new Blob([icsContent], { type: "text/calendar" });
     const link = document.createElement("a");
