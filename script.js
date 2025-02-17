@@ -134,16 +134,20 @@ const observer = new IntersectionObserver(entries => {
                 button.classList.remove('highlight');
             });
 
+
             const activeButton = document.querySelector(`.menu-button[data-section="${entry.target.id}"]`);
             if (activeButton) {
                 activeButton.classList.add('highlight');
-                topButton.classList.add('show');
-            } else {
-                topButton.classList.remove('show');
             }
 
-        }
+            if (entry.target.id === "top") {
+                topButton.classList.remove('show');
+            } else {
+                topButton.classList.add('show');
+            }
 
+
+        }
     });
 }, options);
 
