@@ -239,8 +239,9 @@ const countdownTimerReg = setInterval(function () {
 
     // If the countdown is over, display a message
     if (timeLeft < 0) {
+        console.log("here");
         clearInterval(countdownTimer);
-        document.getElementById("countdown-reg").textContent = "The Tickets Have O-Fish-ally Dropped!";
+        document.querySelector(".countdown-reg").textContent = "Tickets Dropped!";
     }
 }, 1000);
 
